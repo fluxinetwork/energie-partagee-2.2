@@ -1,0 +1,48 @@
+/*------------------------------*\
+
+    #MINIFORM
+
+\*------------------------------*/
+
+.miniform {
+	display: flex;
+}
+
+.miniform__input {
+	background: none transparent;
+	border-bottom:1px solid rgba(#fff, 0.3);
+	color: $c-textwhite;
+	font-family: $main-font;
+	font-size: 3.4rem;
+	height: 100%;
+	width: 100%;
+	max-width: 285px;
+	padding: 0.4rem 0;
+	-webkit-appearance: none;
+  	-webkit-border-radius: 0;
+	
+	&::-webkit-input-placeholder{ 
+	  color: $c-textwhite;
+	  opacity:1;
+	}	
+	&::-moz-placeholder{ 
+	  color: $c-textwhite;
+	  opacity:1;
+	}	
+	&:-ms-input-placeholder{ 
+	  color: $c-textwhite;
+	  opacity:1;
+	}	
+	&:-moz-placeholder { 
+	  color: $c-textwhite;
+	  opacity:1;
+	}
+}
+
+.miniform__submit {
+	@extend .button-round;
+	margin: 0;
+	margin-left: 20px;
+	-webkit-appearance: none;
+  	-webkit-border-radius: 0;
+}

@@ -1,0 +1,173 @@
+/*------------------------------*\
+
+    #CLASS
+
+\*------------------------------*/
+/* ANIMATION */
+@keyframes slideUpOpacity {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+/* TRANSITIONS */
+.transition {
+  transition: all 0.2s ease-in-out;
+}
+
+/* CLEARFIX */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* LIST RESET */
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* BASIC STATES */
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.is-none {
+  display: none !important;
+}
+
+.is-muted {
+  opacity: 0.3;
+}
+
+.has-pointer {
+  cursor: pointer;
+}
+
+.al-c {
+  text-align: center;
+}
+
+.img-reponsive {
+  width: 100%;
+}
+
+.anim-out {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* BREAKPOINTS */
+/* COLORS */
+/* Layout */
+/* Nav */
+/* Box - Border */
+/* Typos */
+/* Typos sizes */
+/*------------------------------*\
+
+	#COURT-CIRCUIT
+	
+\*------------------------------*/
+.courtcircuit {
+  padding-bottom: 10rem;
+}
+.courtcircuit .wrap-n {
+  background: -webkit-radial-gradient(#ed7b34, #eb6c1d), center no-repeat #eb6c1d scroll;
+  background: radial-gradient(#ed7b34, #eb6c1d), center no-repeat #eb6c1d scroll;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.courtcircuit .box__half.input__fixe {
+  flex: 10 1 0;
+  margin-bottom: 0;
+  margin-right: 2rem;
+}
+.courtcircuit .box__fixe {
+  flex: 1 1 0;
+}
+.courtcircuit .courtcircuit__title {
+  display: flex;
+  margin: 0;
+  align-items: baseline;
+  justify-content: center;
+}
+.courtcircuit .courtcircuit__decoleft .img-svg, .courtcircuit .courtcircuit__decoright .img-svg {
+  width: 90px;
+  height: 54px;
+  margin: 0 5px 5px;
+}
+.courtcircuit .courtcircuit__decoright .img-svg {
+  margin: 0 0 5px 5px;
+}
+.courtcircuit .courtcircuit__logo .img-svg {
+  height: 29px;
+  margin-bottom: 10px;
+  width: 226px;
+}
+.courtcircuit .courtcircuit__text {
+  color: #fff;
+}
+
+.courtcircuit__input, .input__mailing {
+  background: none transparent;
+  border-bottom: 1px solid #f57f35;
+  color: #fff;
+  font-family: "avantgarde", Arial;
+  font-size: 3.4rem;
+  height: 100%;
+  width: 100%;
+  padding: 0.4rem 0;
+}
+.courtcircuit__input::-webkit-input-placeholder, .input__mailing::-webkit-input-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+.courtcircuit__input::-moz-placeholder, .input__mailing::-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+.courtcircuit__input:-ms-input-placeholder, .input__mailing:-ms-input-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+.courtcircuit__input:-moz-placeholder, .input__mailing:-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+@media screen and (min-width: 600px) {
+  .courtcircuit .box__half.input__fixe {
+    flex: 1;
+    margin-right: 0;
+  }
+  .courtcircuit .box__half {
+    margin-bottom: 0;
+    align-self: center;
+  }
+}
+@media screen and (min-width: 830px) {
+  .courtcircuit .wrap-n {
+    border-radius: 3px;
+  }
+}

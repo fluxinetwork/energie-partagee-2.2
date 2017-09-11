@@ -1,0 +1,81 @@
+/*======================================================================*\
+==========================================================================
+
+						ITEM FORMATION
+
+==========================================================================
+\*======================================================================*/
+
+.c-formation {
+	position: relative;
+	@include flex(null center);
+	background-color: #fff;
+	padding: 15px 20px;
+	border-radius: $radius;
+	@extend %transition;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+	
+	@media screen and (min-width: $bp--medium) {
+	   padding: 25px 30px;
+	}
+
+	&--webinaire {
+		.c-formation__meta__date {
+			border: 2px solid $c-special;
+			color: $c-special;
+		}
+
+		.c-formation__infos__meta span {
+			color: $c-special;
+		}
+	}
+
+	&--void {
+		.button-round {
+			transform: rotate(45deg);
+		}
+	}
+}
+
+.c-formation__meta__date {
+	position: relative;
+	z-index: 2;
+	flex: none;
+	@include flex(center);
+	padding: 4px 6px 8px 6px;
+	@extend %button-round;
+	border: 2px solid $c-main;
+	color: $c-main;
+	font-family: $main-font;
+	font-size: 16px;
+	line-height: 1.2;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.c-formation__infos {
+	position: relative;
+	z-index: 2;
+	margin-left: $space--m;
+}
+
+.c-formation__infos__meta {
+	font-family: $main-font;
+	color: $c-light;
+
+	span {
+		color: $c-main;
+	}
+}
+
+.c-formation__infos__title {
+	font-family: $main-font;
+	@extend .h4;
+	font-weight: bold;
+	color: $c-dark;
+	margin-top: $space--xs;
+	@include font-smoothing();
+}

@@ -1,0 +1,353 @@
+/*------------------------------*\
+
+    #CLASS
+
+\*------------------------------*/
+/* ANIMATION */
+@keyframes slideUpOpacity {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+/* TRANSITIONS */
+.link, .link::after, .transition {
+  transition: all 0.2s ease-in-out;
+}
+
+/* CLEARFIX */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* LIST RESET */
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* BASIC STATES */
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.is-none {
+  display: none !important;
+}
+
+.is-muted {
+  opacity: 0.3;
+}
+
+.has-pointer {
+  cursor: pointer;
+}
+
+.al-c {
+  text-align: center;
+}
+
+.img-reponsive {
+  width: 100%;
+}
+
+.anim-out {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* BREAKPOINTS */
+/* COLORS */
+/* Layout */
+/* Nav */
+/* Box - Border */
+/* Typos */
+/* Typos sizes */
+.link {
+  position: relative;
+  font-family: "avantgarde", Arial;
+  font-size: 1.2rem;
+  color: #65aa04;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: #65aa04;
+}
+.link:hover::after {
+  width: 100%;
+}
+@media screen and (min-width: 600px) {
+  .link {
+    font-size: 1.4rem;
+  }
+}
+
+.button, .minicard {
+  color: #65aa04;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "avantgarde", Arial;
+  font-weight: bold;
+  padding: 1.65rem 2rem 1.4rem;
+  text-transform: uppercase;
+  margin-top: 6rem;
+  position: relative;
+  z-index: 5;
+  background: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.button:before, .minicard:before {
+  background: #000 none;
+  border-radius: 3px;
+  content: "";
+  height: 100%;
+  left: 0;
+  margin: 0 auto;
+  opacity: 0.1;
+  position: absolute;
+  right: 0;
+  top: 4px;
+  width: 94%;
+  z-index: -1;
+}
+.button:after, .minicard:after {
+  background: #fff none;
+  border-radius: 3px;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.button, .minicard,
+.button-round {
+  outline: 0;
+}
+
+.button-round {
+  background: transparent none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 6.6rem;
+  height: 6.6rem;
+  line-height: 1;
+  padding: 0;
+  text-align: center;
+  width: 6.6rem;
+}
+
+/*------------------------------*\
+
+    #BUTTONS
+
+\*------------------------------*/
+.button {
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  line-height: 1;
+}
+.button [class^="icon-"], .button [class*=" icon-"] {
+  font-size: 2rem;
+  vertical-align: text-bottom;
+  margin-right: 0.4rem;
+}
+.button::before {
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.button:hover {
+  transform: scale(1.05);
+}
+.button:hover::before {
+  transform: scale(0.95) translateY(5%);
+  filter: blur(1px);
+}
+
+.button.cta {
+  padding: 1.6rem 2rem 1.4rem 2rem;
+}
+
+.button.cta.has-icon {
+  padding: 1.6rem 2rem 1.6rem 2rem !important;
+}
+
+.home .button.cta i {
+  display: none;
+}
+
+.button.green {
+  color: #fff;
+}
+.button.green:after {
+  background: #65aa04 none;
+}
+
+.button-round {
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.button-round:hover {
+  transform: scale(1.1);
+}
+.button-round .spinner:before, .button-round .spinner:after {
+  margin: 0 auto;
+}
+
+.button-round.grey {
+  color: #b3b3b3;
+}
+
+.social {
+  padding: 0;
+  margin: 0;
+  font-size: 2.2rem;
+}
+.social li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.social li:last-child {
+  margin-right: 0;
+}
+.social [class^="social--"], .social [class*=" social--"] {
+  position: relative;
+  border-radius: 50%;
+  display: block;
+  text-align: center;
+  padding: 0;
+  cursor: pointer;
+  width: 4rem;
+  height: 4rem;
+  background-color: transparent;
+}
+.social [class^="social--"] i, .social [class*=" social--"] i {
+  display: inline-block;
+  font-size: 4rem;
+  vertical-align: middle;
+}
+.social [class^="social--"] i::before, .social [class*=" social--"] i::before {
+  position: relative;
+  z-index: 2;
+}
+.social [class^="social--"] i::after, .social [class*=" social--"] i::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+  background: #fff none;
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.icon-facebook_40, .icon-facebook_26 {
+  color: #3b5998;
+}
+
+.icon-twitter_40, .icon-twitter_26 {
+  color: #55acee;
+}
+
+.icon-youtube_40, .icon-youtube_26 {
+  color: #dc2925;
+}
+
+.touch .link::after {
+  width: 100%;
+}
+
+.link-cta {
+  color: #65aa04;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "avantgarde", Arial;
+  font-weight: normal;
+  line-height: 1;
+  text-transform: uppercase;
+  width: 100%;
+}
+.link-cta i,
+.link-cta span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.link-cta i {
+  font-size: 3.2rem;
+  margin-right: 1rem;
+}
+
+.minicard {
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.minicard::before {
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.minicard:hover {
+  transform: scale(1.05);
+}
+.minicard:hover::before {
+  transform: scale(0.95) translateY(5%);
+  filter: blur(1px);
+}
+.minicard .link {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+/* EDIT LINK FOR ADMINS */
+.edit {
+  background: #fff none;
+  padding: 1rem 2rem;
+  position: fixed;
+  right: 0;
+  top: 20%;
+  border-radius: 3px 0 0 3px;
+  border: 1px solid #83dc05;
+  border-right: none;
+  z-index: 20;
+}
+
+@media screen and (min-width: 600px) {
+  .holder-button {
+    margin-top: 3rem;
+  }
+}
+@media screen and (min-width: 830px) {
+  .button-round {
+    display: block;
+  }
+}

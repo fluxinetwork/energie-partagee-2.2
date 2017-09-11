@@ -1,0 +1,137 @@
+/*------------------------------*\
+
+    #CLASS
+
+\*------------------------------*/
+/* ANIMATION */
+@keyframes slideUpOpacity {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+/* TRANSITIONS */
+.tag, .transition {
+  transition: all 0.2s ease-in-out;
+}
+
+/* CLEARFIX */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* LIST RESET */
+.tags, .list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* BASIC STATES */
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.is-none {
+  display: none !important;
+}
+
+.is-muted {
+  opacity: 0.3;
+}
+
+.has-pointer {
+  cursor: pointer;
+}
+
+.al-c {
+  text-align: center;
+}
+
+.img-reponsive {
+  width: 100%;
+}
+
+.anim-out {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* BREAKPOINTS */
+/* COLORS */
+/* Layout */
+/* Nav */
+/* Box - Border */
+/* Typos */
+/* Typos sizes */
+/*------------------------------*\
+
+	#TAGS
+	
+\*------------------------------*/
+.tags {
+  display: flex;
+  justify-content: center;
+}
+.tags li {
+  margin: 0 1rem 1rem 0;
+}
+.tags li:last-child {
+  margin-right: 0;
+}
+.tags li .tag {
+  color: #fff;
+}
+
+.tag {
+  font-size: 1.2rem;
+  border: 2px solid #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+  color: #fff;
+}
+.tag::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 6px;
+  border-color: transparent transparent transparent #fff;
+  transform: translate(100%, -50%);
+}
+.tag.is-inactive {
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: default;
+}
+.tag.is-inactive::after {
+  display: none;
+}
+.tag a {
+  color: #fff;
+}

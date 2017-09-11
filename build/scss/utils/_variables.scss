@@ -1,0 +1,119 @@
+/* BREAKPOINTS */
+$bp--mobile: 300px;
+$bp--small: 600px;
+$bp--medium: 830px;
+$bp--large: 1000px;
+$bp--xlarge: 1200px;
+
+$breakpoints: (
+  small : $bp--small,
+  medium: $bp--medium,
+  large : $bp--large
+);
+
+
+$break--s: $bp--small;
+$break--m: $bp--medium;
+$break--l: $bp--large;
+$break--xl: $bp--xlarge;
+
+/* COLORS */
+
+$c-light: #b3b3b3;
+$c-bglight: #f2f2f2;
+$c-text:#555555;
+$c-textlight:#777777;
+$c-textwhite: #fff;
+
+$c-main: #65aa04;
+$c-dark: #122c33;
+$c-focus: #eb6c1d;
+$c-special: #c50545;
+
+$c-eolien: #5ab1bb;
+$c-hydro: #5268b9;
+$c-bio: #83ab00;
+$c-solaire: #e9af00;
+$c-geo: #e7511e;
+$c-eco: #b7115b;
+
+$bg-grid-tmp: transparent;
+$grid-tmp: false;
+@if ($grid-tmp) {
+	$bg-grid-tmp: rgba($c-valid, 0.2);
+}
+
+/* Layout */
+$space: 10rem;
+
+$space--xs: $space/20;
+$space--s: $space/10;
+$space--m: $space/6;
+$space--l: $space/2;
+$space--xl: $space;
+$space--xxl: $space*1.5;
+
+$gutter: $space*0.4;
+$gutter-thin: $space*0.2;
+
+$bigger: 1.3;
+$smaller: 0.7;
+
+$maxW: 830px;
+$contentW: 670px;
+
+/* Nav */
+$navH: 56px;
+
+/* Box - Border */
+$radius: 3px;
+$bshadow: 0 0 10px rgba(0,0,0,0.2);
+
+/* Typos */
+$main-font:"avantgarde", Arial;
+$txt-font:"Roboto",sans-serif;
+$txt-fontserif:"Georgia",serif;
+
+/* Typos sizes */
+$h1-font-sizes: (
+	null : (2.6rem, 1.2),
+	small : (2.8rem, 1.3),
+	medium: (3.2rem, 1.4)
+);
+
+$h2-font-sizes: (
+	null : (1.6rem, 1.5),
+	small : (1.8rem, 1.6),
+	medium : (1.9rem, 1.65)
+);
+
+$h3-font-sizes: (
+	null : (2rem, 1.3),
+	small : (2.2rem, 1.4)
+);
+
+$h4-font-sizes: (
+	null : (1.6rem, 1.3),
+	small : (1.8rem, 1.4)
+);
+
+$h5-font-sizes: (
+	null : (1.4rem, 1),
+	small : 1.6rem
+);
+
+$h6-font-sizes: (
+	null : (1.4rem, 1),
+	small : 1.6rem
+);
+
+$p-font-sizes: (
+	null : (1.4rem, 1.4),
+	small : (1.6rem, 1.5),
+	medium : (1.8rem, 1.6)
+);
+
+$blockquote-font-sizes: (
+	null : (2rem, 1.2),
+	small : 2.2rem
+);

@@ -1,0 +1,16 @@
+
+/*------------------------------*\
+
+    #PAGE
+
+\*------------------------------*/
+
+
+// LISTE FORMATIONS
+
+.page-formations {
+	position: relative;
+	@include retina-image("../img/p5", 8px 8px);
+	@include flex(center, column);
+	padding: 40px 0 80px 0;
+}

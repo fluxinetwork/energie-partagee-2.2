@@ -1,0 +1,142 @@
+
+/*------------------------------*\
+
+    #COLOR-SYSTEM
+
+\*------------------------------*/
+
+// PAGE PROJECT
+
+@mixin etapes_color($color) {
+	.dotline__step > .dot,
+	.dotline::before,
+	.dotline__step.is-active .dot::before,
+	.dotline__line::before,
+	.dotline__line .start  {
+		background: $color;
+	}
+	
+	.dotline__step.is-active .dot,
+	.dotline__step.is-inactive .dot,
+	.dotline__line .end {
+		border-color: $color;
+	}
+
+	.dotline__step.is-inactive .dot {
+		background: #fff;
+	}
+
+	.dotline__step.is-active .micro-legende {
+		color: $color;
+	}
+}
+
+@mixin graphbar_color($color) {
+	$darkenStep: 0, 10, 20, 30, 40, 50, 60;
+	@for $i from 1 through 7 {
+		.graphbar__segment.citoyen:nth-child(#{$i}) {
+			background: darken($color, (nth($darkenStep, $i))*1%);
+		}
+		.financer.citoyen:nth-child(#{$i}) .dot {
+			background: darken($color, (nth($darkenStep, $i))*1%);
+		}
+	}
+	@for $i from 1 through 6 {
+		#segment-prive-#{$i} {
+			background: darken($c-bglight, $i*10%);
+		}
+		#financer-prive-#{$i} .dot {
+			background: darken($c-bglight, $i*10%);
+		}
+	}
+}
+
+@mixin details_colors($color) {
+	.p-details__equi:before{
+		border-color: transparent transparent $color;
+	}
+	.p-details__nrg i {
+		background: radial-grad($color);	
+	}
+	.p-details__equi {
+		background-color:$color;	
+	}
+	.p-details__infos{
+		color:$color;
+	}
+	
+}
+
+@mixin project_colors($color) {
+	.etapes {
+		@include etapes_color($color);
+	}
+	.repartition {
+		@include graphbar_color($color);
+	}
+	.p-details{
+		@include details_colors($color);
+	}
+	.testimony{
+		@include background(url("../img/bg-vector-1.png") no-repeat bottom left, radial-grad($color), center no-repeat $color scroll);		
+	}
+}
+
+// CARD PROJECT
+
+@mixin card_project_colors($color, $icon) {
+	.card__infos {
+		background: radial-grad($color, null, at top);	
+	}
+	.card__icon:before{
+		content: $icon;
+	}
+}
+
+// MAP PROJECTS
+
+@mixin map_colors($color, $icon) {
+	.filter-nrj {
+		background: radial-grad($color);
+
+		.icon-filter:before{
+			content: $icon;
+		}
+	}
+	&.card-map .link-cta{
+		color:$color;
+	}
+}
+
+// COLORZZZ !
+
+.c-solai {
+	@include project_colors ($c-solaire);
+	@include map_colors($c-solaire, "\e91e");
+	@include card_project_colors($c-solaire, "\e91f");
+} 
+.c-eolie {
+	@include project_colors ($c-eolien);
+	@include map_colors($c-eolien, "\e90d");
+	@include card_project_colors($c-eolien, "\e90e");
+} 
+.c-micro {
+	@include project_colors ($c-hydro);
+	@include map_colors($c-hydro, "\e917");
+	@include card_project_colors($c-hydro, "\e918");
+} 
+.c-bioma {
+	@include project_colors ($c-bio);
+	@include map_colors($c-bio, "\e901");
+	@include card_project_colors($c-bio, "\e902");
+} 
+.c-geoth {
+	@include project_colors ($c-geo);
+	@include map_colors($c-geo, "\e913");
+	@include card_project_colors($c-geo, "\e914");
+} 
+.c-econo {
+	@include project_colors ($c-eco);
+	@include map_colors($c-eco, "\e90b");
+	@include card_project_colors($c-eco, "\e90c");
+} 

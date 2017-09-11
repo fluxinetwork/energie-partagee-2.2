@@ -1,0 +1,156 @@
+/*------------------------------*\
+
+    #CLASS
+
+\*------------------------------*/
+/* ANIMATION */
+@keyframes slideUpOpacity {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+/* TRANSITIONS */
+.transition {
+  transition: all 0.2s ease-in-out;
+}
+
+/* CLEARFIX */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* LIST RESET */
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* BASIC STATES */
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.is-none {
+  display: none !important;
+}
+
+.is-muted {
+  opacity: 0.3;
+}
+
+.has-pointer {
+  cursor: pointer;
+}
+
+.al-c {
+  text-align: center;
+}
+
+.img-reponsive {
+  width: 100%;
+}
+
+.anim-out {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* BREAKPOINTS */
+/* COLORS */
+/* Layout */
+/* Nav */
+/* Box - Border */
+/* Typos */
+/* Typos sizes */
+/*------------------------------*\
+
+	#HEADER-BLOC
+	
+\*------------------------------*/
+.header-bloc {
+  position: relative;
+  background: url("../img/energie-partagee-header-ciel-bleu.jpg") no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  padding-top: 10rem;
+}
+.header-bloc::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.header-bloc > * {
+  position: relative;
+}
+.header-bloc .h1 {
+  margin-bottom: 5rem;
+}
+.header-bloc .h4 {
+  margin-bottom: 0;
+  margin-top: 3rem;
+  color: #fff;
+}
+.header-bloc .h4 span {
+  display: inline-block;
+  margin: 0 0.66667rem 0 0;
+}
+.header-bloc .h4 span:last-child {
+  margin-left: 2rem;
+}
+.header-bloc .lightvideo.button {
+  margin-top: 3rem;
+}
+.header-bloc .tags {
+  display: none;
+}
+
+.page .header-bloc,
+.single .header-bloc,
+.search-results .header-bloc,
+.archive .header-bloc {
+  padding-bottom: 24rem;
+  margin-bottom: 24rem;
+}
+.page .header-bloc .h1,
+.single .header-bloc .h1,
+.search-results .header-bloc .h1,
+.archive .header-bloc .h1 {
+  margin: 1rem auto 0;
+}
+
+@media screen and (min-width: 600px) {
+  .header-bloc {
+    padding-top: 16rem;
+  }
+  .header-bloc .tags {
+    display: flex;
+  }
+}

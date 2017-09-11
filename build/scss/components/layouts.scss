@@ -1,0 +1,141 @@
+
+/*------------------------------*\
+
+	# LAYOUTS
+	# Modules de mise en page
+	
+\*------------------------------*/ 
+
+.duo-card {
+	.head__flex {
+		.s-title {
+			margin-bottom:0;
+			margin-top:$gutter*0.3;	
+		}
+		.box__half {
+			flex: 0 1 auto;			
+			text-align:right;
+		}
+		
+		
+		.lighter {
+			color:$c-light;
+			text-align:right;
+			display:none;
+			padding-right: 1rem;
+		}
+		
+		.social {
+			display:inline-block;
+			margin:0;			
+		}		
+			
+	}
+}
+
+.trio-card {
+	@include retina-image("../img/p5", 8px 8px);
+	
+	.box__half {
+		display: block;
+		width: 100%;
+	 }
+		
+	.box__fixe {
+		display:none;
+	}
+	.button {
+		margin-top:0
+	 }
+}
+.single .trio-card {
+	.box__fixe{
+		display:flex;
+		flex:100%;
+	}
+}
+
+.box-asy {
+	@extend %box-special;
+	@extend %box-asymetrique;
+	z-index: 2;
+}
+
+
+@media screen and (min-width: $bp--small) {	
+	.duo-card{
+		.box__half {
+			margin-bottom:0;			
+		}
+	}
+	.duo-card {
+		.head__flex {
+			.s-title{
+				text-align:left;
+				margin-bottom:$space*0.6;	
+			}
+			
+			.box__half {
+				flex:1;
+			}
+		}
+	}	
+	.trio-card {
+		.box__half:nth-child(3){
+			padding-right:0;
+		}
+
+		.button:not(.cta) {
+			margin-top:$space*0.3;
+	 	}
+	}
+}
+
+@media screen and (min-width: $bp--medium) {
+	.trio-card {
+		.box__half {
+			flex: 41.5%;		
+			padding-right: $gutter;	
+			margin-bottom: 0;
+
+			.card__infos {			
+    			display: block!important;
+    			position: relative!important;
+    			border-radius: 0 0 $radius $radius!important;
+			}
+		}
+		.box__half:nth-child(3) {
+			padding-right: $gutter;	
+		}
+		
+		.box__full {
+			margin-bottom: 4rem;
+			
+			.card__img i {
+				bottom: 11.5rem;
+			}
+			.card__infos {			
+    			bottom: 3rem;
+    			display: inline-block;
+    			position: absolute;
+    			border-radius: 0 $radius $radius 0;
+			}
+		}	
+			
+		.box__fixe{
+			display:flex;
+		}  
+	  	.button:not(.cta) {
+			margin-top:$space*0.6;
+		}
+	}
+	.duo-card {
+		.head__flex {
+			.lighter {			
+				display: inline-block;
+				vertical-align: top;
+				padding-top:1rem;
+			}			
+		}
+	}	
+}

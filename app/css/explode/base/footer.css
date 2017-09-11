@@ -1,0 +1,225 @@
+/*------------------------------*\
+
+    #CLASS
+
+\*------------------------------*/
+/* ANIMATION */
+@keyframes slideUpOpacity {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+/* TRANSITIONS */
+.transition {
+  transition: all 0.2s ease-in-out;
+}
+
+/* CLEARFIX */
+.footer .labels, .clearfix {
+  *zoom: 1;
+}
+.footer .labels:before, .footer .labels:after, .clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.footer .labels:after, .clearfix:after {
+  clear: both;
+}
+
+/* LIST RESET */
+.list-reset, .footer .labels {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* BASIC STATES */
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.is-none {
+  display: none !important;
+}
+
+.is-muted {
+  opacity: 0.3;
+}
+
+.has-pointer {
+  cursor: pointer;
+}
+
+.al-c {
+  text-align: center;
+}
+
+.img-reponsive {
+  width: 100%;
+}
+
+.anim-out {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* BREAKPOINTS */
+/* COLORS */
+/* Layout */
+/* Nav */
+/* Box - Border */
+/* Typos */
+/* Typos sizes */
+/*------------------------------*\
+    #FOOTER
+\*------------------------------*/
+.footer {
+  position: relative;
+  background: #122c33;
+  color: #fff;
+  background: radial-gradient(at top, #193c46, #122c33 70%);
+}
+.footer .s-title {
+  color: #fff;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+.footer .box .box__half {
+  margin-bottom: 4rem;
+}
+.footer .box .box .box__solo {
+  flex: 10 1 0;
+  margin-right: 2rem;
+  margin-bottom: 0;
+  padding: 0;
+}
+.footer .box .box .box__fixe {
+  flex: 1 1 0;
+}
+.footer .courtcircuit__input {
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-family: "avantgarde", Arial;
+  font-size: 3.4rem;
+  height: 100%;
+  padding: 0.4rem 0;
+  width: 100%;
+}
+.footer .social {
+  text-align: center;
+}
+.footer .labels {
+  text-align: center;
+}
+.footer .labels .labels__img {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.footer .labels .labels__img .labels__label {
+  display: inline-block;
+  margin: 0 1rem 0 0;
+  vertical-align: middle;
+}
+.footer .labels .labels__img .labels__label:last-child {
+  margin-right: 0;
+}
+.footer .labels .labels__img img {
+  width: 64px;
+}
+.footer .labels .labels__txt .p-ss {
+  max-width: 620px;
+  margin-bottom: 0;
+  color: #fff;
+  line-height: 1.4;
+}
+.footer .link::after {
+  background: #fff;
+}
+
+.footer__nav {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin-top: 5rem;
+  text-align: center;
+  width: 100%;
+}
+.footer__nav .link {
+  color: #fff;
+  margin: 0 auto 2rem;
+}
+.footer__nav .link:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .footer .s-title {
+    text-align: left;
+    margin-top: 4rem;
+  }
+  .footer .box:first-child .s-title {
+    margin-top: 0;
+  }
+  .footer .box:first-child .box__half {
+    max-width: 60%;
+  }
+  .footer .box:first-child .box__half:first-child {
+    max-width: 300px;
+  }
+  .footer .box:first-child h2 {
+    margin-bottom: 2rem;
+  }
+  .footer .box .box .box__solo {
+    padding: 0;
+    flex: 1 1 0;
+    margin-bottom: 0;
+    margin-right: 4rem;
+  }
+  .footer .box .box__half {
+    flex: 50%;
+    padding-right: 0;
+    margin-bottom: 0;
+  }
+  .footer .social {
+    text-align: left;
+    margin-top: 4rem;
+  }
+  .footer .labels {
+    display: block;
+    text-align: left;
+  }
+  .footer .labels .labels__img {
+    float: left;
+    width: 160px;
+  }
+  .footer .labels .labels__img:last-child {
+    margin-right: 2rem;
+  }
+
+  .footer__nav {
+    flex-flow: row nowrap;
+  }
+  .footer__nav .link {
+    margin: 0 2rem 0;
+  }
+}
+@media screen and (min-width: 830px) {
+  .footer .s-title {
+    margin-top: 6rem;
+  }
+}

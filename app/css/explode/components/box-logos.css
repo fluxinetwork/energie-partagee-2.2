@@ -1,0 +1,160 @@
+/*------------------------------*\
+
+    #CLASS
+
+\*------------------------------*/
+/* ANIMATION */
+@keyframes slideUpOpacity {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+/* TRANSITIONS */
+.transition {
+  transition: all 0.2s ease-in-out;
+}
+
+/* CLEARFIX */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* LIST RESET */
+.list-reset, .box-logos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* BASIC STATES */
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.is-none {
+  display: none !important;
+}
+
+.is-muted {
+  opacity: 0.3;
+}
+
+.has-pointer {
+  cursor: pointer;
+}
+
+.al-c {
+  text-align: center;
+}
+
+.img-reponsive {
+  width: 100%;
+}
+
+.anim-out {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* BREAKPOINTS */
+/* COLORS */
+/* Layout */
+/* Nav */
+/* Box - Border */
+/* Typos */
+/* Typos sizes */
+/*------------------------------*\
+
+	#BOX-LOGOS
+	
+\*------------------------------*/
+.box-logos {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box-logos__item {
+  flex: 1 1 100%;
+  margin: 0.5rem;
+}
+.box-logos__item .box-logos__logo {
+  border-radius: 3px;
+  overflow: hidden;
+  display: block;
+}
+.box-logos__item .box-logos__logo img {
+  display: block;
+  width: 100%;
+}
+
+.box-logos__btn {
+  align-self: center;
+  flex: 1 1 100%;
+  text-align: center;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 300px) {
+  .box-logos__item {
+    max-width: 45%;
+  }
+  .box-logos__item .box-logos__logo {
+    border-radius: 3px;
+    display: block;
+    margin: auto;
+    max-width: 190px;
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 600px) {
+  .box-logos {
+    justify-content: space-between;
+  }
+  .box-logos .box-logos__item {
+    flex: 1;
+  }
+  .box-logos .box-logos__item:nth-child(4) {
+    margin-right: 4rem;
+  }
+  .box-logos .box-logos__btn {
+    align-self: center;
+    flex: inherit;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 600px) {
+  .box-logos .box-logos__item {
+    flex: 1;
+    margin: 0 2rem 0 0;
+    align-self: center;
+  }
+}
+@media screen and (min-width: 830px) {
+  .box-logos .box-logos__btn {
+    align-self: center;
+    flex: inherit;
+  }
+}

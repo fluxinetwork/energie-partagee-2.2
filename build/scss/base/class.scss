@@ -1,0 +1,98 @@
+/*------------------------------*\
+
+    #CLASS
+
+\*------------------------------*/
+
+/* ANIMATION */
+
+@keyframes slideUpOpacity {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+/* TRANSITIONS */
+
+%transition, .transition {
+  transition: all 0.2s ease-in-out;
+}
+
+/* CLEARFIX */
+
+%clearfix, .clearfix {
+   *zoom: 1;
+   &:before, &:after {
+       content: " ";
+       display: table;
+   }
+   &:after {
+       clear: both;
+   }
+}
+
+/* LIST RESET */
+
+%list-reset, .list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* BASIC STATES */
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.is-none {
+	display:none !important;
+}
+
+.is-muted {
+  opacity: 0.3;
+}
+
+.has-pointer {
+  cursor: pointer; 
+}
+
+.al-c{
+	text-align:center;	
+}
+
+.img-reponsive{
+	width:100%;	
+}
+%triangle{				
+	border-style: solid;
+	border-width: 0 0.8rem 1.2rem;
+	content: "";
+	height: 0;
+	left: 3.2rem;
+	position: absolute;
+	top: -1rem;
+	width: 0;
+}
+
+%loader {
+    background: url('../img/loading.gif') center center no-repeat #f2f2f2;
+}
+.anim-out{
+  opacity: 0;
+  transform: scale(0);
+}

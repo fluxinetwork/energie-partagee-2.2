@@ -1,0 +1,93 @@
+
+/*------------------------------*\
+
+	#CARDS
+	
+\*------------------------------*/
+
+.card {
+	@extend %card;
+}
+
+.card-news {
+	@extend %card;
+	@extend %transition;
+
+	&:hover { 
+		.card__infos {
+			opacity: 0;
+		}
+	}
+	
+	.card__infos {
+		@extend %transition;	
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background: rgba(0,0,0,0.3);
+	}
+
+	.tag {
+		text-transform:uppercase;	
+	}
+
+	.card__title, .tag {
+		@extend %transition;
+	}
+}
+.card-news--expand {
+	@extend .card-news;
+}
+.card-news--big {
+	@extend .card-news;
+}
+.card-project{
+	@extend %transition;
+	overflow: hidden;
+	background-color: transparent;
+
+	.card__img {
+		&::after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background: linear-gradient(40deg, rgba(#000, 0.3) 0%, rgba(#000, 0) 50%);
+			z-index: 0;
+		}
+	}
+
+	.p-ss {
+		margin-top: 0;
+	}
+
+	.card__title {
+		@include font-smoothing();
+	}
+}
+
+.minicard {		
+	@extend %minicard;
+}
+
+.p-details{
+	@extend %p-details;
+	border-radius: 3px;
+}
+.p-details__equi {
+	margin-top: 0;
+}
+
+
+@media screen and (min-width: $bp--small) {	
+	.p-details{
+		padding-top:$gutter;
+		
+		.p-details__nrg{		
+			margin-bottom:$gutter;		
+		}
+	}
+}

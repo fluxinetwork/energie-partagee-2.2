@@ -1,0 +1,79 @@
+/*======================================================================*\
+==========================================================================
+
+							LAYOUT TABS
+
+==========================================================================
+\*======================================================================*/
+
+.l-tabs {
+	position: relative;
+	@include flex(null center, column);
+}
+
+.l-tabs__controls {
+	@include flex(center);
+	margin-bottom: $space--s;
+}
+
+.l-tabs__controls__tab {
+	margin: $space--s;
+
+	&.is-active {
+		@extend .green;
+	}
+}
+
+.l-tabs__content {
+	position: relative;
+	@include flex(null flex-start);
+	@extend %transition;
+	max-width: 735px;
+	width: 90%;
+
+	@media screen and (min-width: $bp--small) {
+		width: 80%;
+	}
+}
+
+.l-tabs__content__list {
+	position: absolute;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	visibility: hidden;
+	@extend .list-reset;
+	@extend %transition;
+
+	&.is-active {
+		z-index: 10;
+		visibility: visible;
+	}
+}
+
+.l-tabs__content__list__item {
+	width: 100%;
+	transform: translateX(-50%);
+	opacity: 0; 
+	transition: all 0.3s;
+
+	@for $i from 1 through 20 {
+		&:nth-child(#{$i}) {
+			transition-delay: $i * 0.1s;
+		}
+	}
+
+	.anim-off & {
+		transform: translateX(50%);
+	}
+
+	.is-active & {
+		transform: translateX(0);
+		opacity: 1;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: $space--m;
+	}
+}

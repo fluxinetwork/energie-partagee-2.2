@@ -1,0 +1,355 @@
+
+
+/*------------------------------*\
+
+    #TYPOGRAPHY
+
+\*------------------------------*/
+
+
+
+/*@import url(https://fonts.googleapis.com/css?family=PT+Sans);*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,700);
+@font-face {
+    font-family: 'avantgarde';
+    src: url('../fonts/avantgarde/avantgarde-regular-webfont.eot');
+    src: url('../fonts/avantgarde/avantgarde-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avantgarde/avantgarde-regular-webfont.woff2') format('woff2'),
+         url('../fonts/avantgarde/avantgarde-regular-webfont.woff') format('woff'),
+         url('../fonts/avantgarde/avantgarde-regular-webfont.ttf') format('truetype'),
+         url('../fonts/avantgarde/avantgarde-regular-webfont.svg#texgyreadventorregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'avantgarde';
+    src: url('../fonts/avantgarde/bold/avantgarde-bold-webfont.eot');
+    src: url('../fonts/avantgarde/bold/avantgarde-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avantgarde/bold/avantgarde-bold-webfont.woff2') format('woff2'),
+         url('../fonts/avantgarde/bold/avantgarde-bold-webfont.woff') format('woff'),
+         url('../fonts/avantgarde/bold/avantgarde-bold-webfont.ttf') format('truetype'),
+         url('../fonts/avantgarde/bold/avantgarde-bold-webfont.svg#texgyreadventorbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+/*Lightgallery*/
+@font-face {
+  font-family: 'lg';
+  src: url("../fonts/lightgalerie/lg.eot?n1z373");
+  src: url("../fonts/lightgalerie/lg.eot?#iefixn1z373") format("embedded-opentype"),
+    url("../fonts/lightgalerie/lg.woff?n1z373") format("woff"),
+    url("../fonts/lightgalerie/lg.ttf?n1z373") format("truetype"),
+    url("../fonts/lightgalerie/lg.svg?n1z373#lg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Icon font */
+
+@font-face {
+    font-family: 'icomoon';
+    src:    url('../fonts/icofont/icomoon.eot?wy6knz');
+    src:    url('../fonts/icofont/icomoon.eot?wy6knz#iefix') format('embedded-opentype'),
+        url('../fonts/icofont/icomoon.woff2?wy6knz') format('woff2'),
+        url('../fonts/icofont/icomoon.ttf?wy6knz') format('truetype'),
+        url('../fonts/icofont/icomoon.woff?wy6knz') format('woff'),
+        url('../fonts/icofont/icomoon.svg?wy6knz#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important; 
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    @include font-smoothing();
+}
+/* New */
+
+
+
+.icon-logout_32:before {
+    content: "\e92a";
+}
+.icon-close-no-border_64:before {
+    content: "\e926";
+}
+.icon-close:before {
+    content: "\e927";
+}
+.icon-adherents_32:before {
+    content: "\e900";
+}
+.icon-biomasse_64:before {
+    content: "\e901";
+}
+.icon-biomasse_100:before {
+    content: "\e902";
+}
+.icon-calendar_20:before {
+    content: "\e903";
+}
+.icon-check_32:before {
+    content: "\e904";
+}
+.icon-check_64:before {
+    content: "\e905";
+}
+.icon-chevronright_32:before {
+    content: "\e906";
+}
+.icon-chevronright_64:before {
+    content: "\e907";
+}
+.icon-close_32:before {
+    content: "\e908";
+}
+.icon-close_64:before {
+    content: "\e909";
+}
+.icon-download_64:before {
+    content: "\e90a";
+}
+.icon-economies-energie_64:before {
+    content: "\e90b";
+}
+.icon-economies-energie_100:before {
+    content: "\e90c";
+}
+.icon-eolien_64:before {
+    content: "\e90d";
+}
+.icon-eolien_100:before {
+    content: "\e90e";
+}
+.icon-euro_20:before {
+    content: "\e90f";
+}
+.icon-facebook_26:before {
+    content: "\e910";
+}
+.icon-facebook_40:before {
+    content: "\e911";
+}
+.icon-fleche_64:before {
+    content: "\e912";
+}
+.icon-geothermie_64:before {
+    content: "\e913";
+}
+.icon-geothermie_100:before {
+    content: "\e914";
+}
+.icon-hamburger_32:before {
+    content: "\e915";
+}
+.icon-heart_20:before {
+    content: "\e916";
+}
+.icon-micro-hydroelectricite_64:before {
+    content: "\e917";
+}
+.icon-micro-hydroelectricite_100:before {
+    content: "\e918";
+}
+.icon-lightbolt_20:before {
+    content: "\e919";
+}
+.icon-pencil_20:before {
+    content: "\e91a";
+}
+.icon-pin_20:before {
+    content: "\e91b";
+}
+.icon-plus_64:before {
+    content: "\e91c";
+}
+.icon-search_32:before {
+    content: "\e91d";
+}
+.icon-solaire-photovoltaique_64:before {
+    content: "\e91e";
+}
+.icon-solaire-photovoltaique_100:before {
+    content: "\e91f";
+}
+.icon-top_64:before {
+    content: "\e920";
+}
+.icon-twitter_26:before {
+    content: "\e921";
+}
+.icon-twitter_40:before {
+    content: "\e922";
+}
+.icon-video_20:before {
+    content: "\e923";
+}
+.icon-youtube_26:before {
+    content: "\e924";
+}
+.icon-youtube_40:before {
+    content: "\e925";
+}
+
+
+html {
+    font-size: 62.5%;
+}​
+
+.bold {
+	font-weight: 700;
+}
+
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6,
+p, .p {
+    font-family: $main-font;
+    margin: 0;
+    padding: 0;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+h1,.h1{	
+	@include font-size($h1-font-sizes);	
+}
+
+h2,
+.h2{	
+	@include font-size($h2-font-sizes);   
+	color:$c-dark;
+}
+.h2{	
+	@extend .description;
+	margin-top: $space/2;
+}
+.description{
+	color:$c-textlight;
+	font-weight:normal;
+}
+
+h3,.h3{ 
+    @include font-size($h3-font-sizes);
+	text-transform:uppercase;
+	color:$c-dark;	 
+
+    + p {
+        margin-top: $space*0.2;
+    }
+}
+.h3{ 
+   margin-top:	$space*0.8;
+}
+
+h4,
+.h4,
+.card__title{ 
+    @include font-size($h4-font-sizes);	
+}
+.h4{
+	color:$c-dark;	 
+	font-weight:normal;
+	margin-top:$space*0.3;
+}
+
+h5,
+.h5,
+.s-title { 
+    @extend %transition;
+    @include font-size($h5-font-sizes);
+	color:$c-dark;
+	text-transform:uppercase;
+	color:$c-dark;	 
+}
+
+.h5 {
+	margin-top: $space*0.4;
+}
+.s-title{ 
+    margin-bottom:$space*0.2;
+	text-align:center;
+    letter-spacing: 0.05rem;
+    @include font-smoothing();
+}
+
+h6,
+.h6{ 
+    @include font-size($h6-font-sizes);
+    color:$c-textlight;
+    font-weight: normal; 
+}
+
+p,
+.p,
+.p-ss,
+.legend,
+.accordion__content ul,
+ul.list,
+.fluxi-content ul:not(.social) {
+	@include font-size($p-font-sizes); 
+	font-family: $txt-fontserif;
+	color:$c-text;
+}
+p,
+.p-ss,
+.legend{
+    margin-top: $space*0.1;
+}
+.p-ss,
+.legend{
+    font-family: $txt-font; 
+}
+.legend{
+	color:$c-textlight;
+}
+
+.accordion__content ul,
+.list,
+.fluxi-content ul:not(.social):not(.main-isogrid):not(.tags):not(.searchresults) {
+    margin-bottom: 0;
+    margin-top: $space*0.2;
+    padding-left: $gutter;
+    max-width: 80%;
+}
+
+blockquote{
+    margin: $space/2 0;
+
+    .blockquote{
+        @include font-size($blockquote-font-sizes);
+        font-family: $main-font;
+        color: $c-focus;
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width: $bp--small) {
+    .s-title{ 
+        margin-bottom:$space*0.6;
+        text-align:center;
+    }
+}
+
+@media screen and (min-width: $bp--medium) {
+    .h3{ 
+       margin-top:  $space*0.8;
+    }
+
+    h4, .h4 {
+        margin-top:$space*0.5;
+    }
+
+    p,
+    .p-ss,
+    .legend{
+        margin-top: $space*0.2;
+    }
+}

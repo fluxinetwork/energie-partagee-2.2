@@ -1,0 +1,296 @@
+/*------------------------------*\
+
+    #CLASS
+
+\*------------------------------*/
+/* ANIMATION */
+@keyframes slideUpOpacity {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+/* TRANSITIONS */
+.map-holder .cards-map .card-map, .map-holder .cards-map .card-map .card .card__img .spinner, .transition {
+  transition: all 0.2s ease-in-out;
+}
+
+/* CLEARFIX */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* LIST RESET */
+.map-filters, .list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* BASIC STATES */
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.is-none {
+  display: none !important;
+}
+
+.is-muted {
+  opacity: 0.3;
+}
+
+.has-pointer {
+  cursor: pointer;
+}
+
+.al-c {
+  text-align: center;
+}
+
+.img-reponsive {
+  width: 100%;
+}
+
+.map-holder #map.loader {
+  background: url("../img/loading.gif") center center no-repeat #f2f2f2;
+}
+
+.anim-out {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* BREAKPOINTS */
+/* COLORS */
+/* Layout */
+/* Nav */
+/* Box - Border */
+/* Typos */
+/* Typos sizes */
+/*------------------------------*\
+    #MAP
+\*------------------------------*/
+.map-projects {
+  background-color: #f2f2f2;
+  padding-top: 5rem;
+}
+.map-projects .filters {
+  flex: 1 1 100%;
+  justify-content: center;
+  text-align: center;
+}
+.map-projects .filters .h5 {
+  margin-top: 0;
+}
+.map-projects .filters .h5:last-child {
+  margin-top: 5rem;
+}
+.map-projects .filters:last-child .h5 {
+  margin-top: 4rem;
+}
+.map-projects .map-holder #map {
+  margin-top: 4rem;
+}
+.map-projects .map-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.map-projects .map-filters li {
+  margin: 0 0.5rem 1rem;
+}
+
+.map-filters li {
+  display: block;
+}
+.map-filters .tag {
+  cursor: pointer;
+  border-color: #65aa04;
+  color: #65aa04;
+  background-color: transparent;
+}
+.map-filters .tag::after {
+  display: none;
+}
+
+.map-filters .tag:hover, .map-filters .tag.js-f-active {
+  background-color: #122c33;
+  border-color: #122c33;
+  color: #fff;
+}
+.map-filters .tag.js-f-active:before {
+  content: "\e927";
+  font-family: 'icomoon';
+  font-size: 1rem;
+  padding-right: 0.8rem;
+}
+.map-filters .filter-nrj:hover {
+  background-color: #122c33;
+}
+.map-filters .filter-nrj.js-f-active {
+  background-color: #122c33;
+}
+.map-filters .filter-nrj.js-f-active .icon-filter:before {
+  content: "\e926";
+}
+
+.map-holder {
+  position: relative;
+}
+.map-holder #map {
+  width: 100%;
+  border-radius: 3px;
+}
+.map-holder .cards-map .card-map .card {
+  height: auto;
+}
+.map-holder .cards-map .card-map .card a {
+  color: #fff;
+}
+.map-holder .cards-map .card-map .card .tag {
+  position: absolute;
+  margin: 2rem;
+}
+.map-holder .cards-map .card-map .card .card__title {
+  display: inline-block;
+  vertical-align: baseline;
+}
+.map-holder .cards-map .card-map .card .card__img {
+  background-position: center center;
+  background-size: cover;
+  min-height: 170px;
+  width: 100%;
+}
+.map-holder .cards-map .card-map .card .card__img .spinner {
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.map-holder .cards-map .card-map .card .card__img .spinner:before {
+  margin: 15% auto;
+}
+.map-holder .cards-map .card-map .link-cta {
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.map-projects #map {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .map-projects {
+    padding-top: 2rem;
+    background: #f2f2f2 url("../img/shape-grid-1.png") repeat 0 0;
+  }
+  .map-projects .box.wrap-n:first-child {
+    display: none;
+  }
+  .map-projects .map-holder {
+    padding-bottom: 3rem;
+  }
+  .map-projects .spinner.bg-spin:before {
+    margin: 10% auto;
+  }
+  .map-projects .wrap-n.al-c .button {
+    margin: 0 auto 1rem;
+  }
+
+  .cards-map {
+    padding: 4rem 2rem 0;
+  }
+  .cards-map .card-map {
+    margin-bottom: 4rem;
+  }
+  .cards-map .card-map .spinner, .cards-map .card-map .p-details, .cards-map .card-map .link-cta {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 600px) {
+  .map-projects #map {
+    display: block;
+  }
+  .map-projects .js-more-procards {
+    display: none;
+  }
+
+  .map-holder .card__icon, .map-holder .card__infos .p-ss {
+    display: none;
+  }
+  .map-holder .cards-map .card-map {
+    max-width: 260px;
+    position: absolute;
+    margin-right: 4rem;
+    padding: 8rem 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+  }
+  .map-holder .cards-map .card-map .card-project {
+    border-radius: 3px 3px 0 0;
+  }
+  .map-holder .cards-map .card-map.anim-out-left {
+    right: -500px;
+    opacity: 0;
+  }
+  .map-holder .cards-map .card-map.anim-out-left.unactive .card__img {
+    background-image: none !important;
+  }
+
+  .map-holder .cards-map .card-map .card .card__img .spinner:before {
+    margin: 30% auto;
+  }
+}
+@media screen and (min-width: 830px) {
+  .map-projects .filters {
+    flex: 1 1 50%;
+  }
+  .map-projects .filters:first-child {
+    text-align: left;
+    justify-content: flex-start;
+  }
+  .map-projects .filters:last-child {
+    text-align: right;
+    justify-content: flex-end;
+  }
+  .map-projects .filters:last-child .h5, .map-projects .filters .h5 {
+    margin-top: 0;
+  }
+  .map-projects .map-filters.first {
+    text-align: left;
+    justify-content: flex-start;
+  }
+  .map-projects .map-filters.first li {
+    margin: 0 1rem 1rem 0;
+  }
+  .map-projects .map-filters.second {
+    text-align: right;
+    justify-content: flex-end;
+    padding-top: 1.5rem;
+  }
+  .map-projects .map-filters.second li {
+    margin: 0 0 1rem 1rem;
+  }
+}

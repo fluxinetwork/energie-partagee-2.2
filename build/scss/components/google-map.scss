@@ -1,0 +1,261 @@
+/*------------------------------*\
+    #MAP
+\*------------------------------*/
+
+.map-projects{
+	background-color:$c-bglight;
+	padding-top:$space/2;
+
+	.filters{
+		flex: 1 1 100%;
+		justify-content: center;
+		text-align: center;
+
+		.h5{
+			margin-top: 0;
+			margin-bottom: $gutter/2;
+
+			&:last-child{
+				margin-top: $space/2;
+			}
+		}
+		&:last-child .h5{
+			margin-top: $space*0.4;
+		}
+	}
+
+	.map-holder #map{
+		margin-top: $space*0.4;
+	}
+	.map-filters{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		li{
+			margin:0 $space*0.05 $space*0.1;
+		}
+	}
+
+	+ .fluxi-content {
+		margin-top: 0!important;
+	}
+}
+
+.map-filters{
+	@extend %list-reset;
+	li{
+		display:block;
+	}
+	.tag{
+		cursor:pointer;
+		border-color:$c-main;
+		color:$c-main;
+		background-color: transparent;
+
+		&::after {
+			display: none;
+		}
+	}
+}
+
+.map-filters{
+	.tag:hover,.tag.js-f-active{
+		background-color:$c-dark;
+		border-color:$c-dark;
+		color:#fff;
+	}
+	.tag.js-f-active:before{
+		content:"\e927";
+		font-family: 'icomoon';
+		font-size: 1rem;
+		padding-right:0.8rem;
+	}
+	.filter-nrj:hover{
+		background-color:$c-dark;
+	}
+	.filter-nrj.js-f-active{
+		background-color:$c-dark;
+		.icon-filter:before{
+			content: "\e926";
+		}
+	}
+}
+
+.map-holder{
+	position:relative;
+
+	#map {
+		width: 100%;
+		border-radius: 3px;
+
+		&.loader {
+			@extend %loader;
+		}
+	}
+
+	.cards-map{
+		.card-map{
+			@extend %transition;
+
+			.card{
+				height: auto;
+				a{
+					color:#fff;
+				}
+				.tag{
+					position:absolute;
+					margin:$gutter/2;
+				}				
+				.card__title {
+				    display: inline-block;
+				    vertical-align: baseline;
+				}
+				.card__img{
+					background-position: center center;
+				    background-size: cover;
+				    min-height: 170px;
+				    width: 100%;
+
+				    .spinner{
+				    	@extend %transition;
+				    	
+					    display: block;
+					    height: 100%;
+					    position: absolute;
+					    width: 100%;
+					    &:before{
+					    	margin: 15% auto; 	
+						}
+
+				    }
+				}
+			}
+
+			.link-cta{
+				background-color:#fff;
+				padding:$gutter/2;
+			}
+		}
+	}
+}
+
+.map-projects{
+	#map{
+		display: none;
+	}
+}
+
+@media screen and (max-width: $bp--small) {	
+	.map-projects{
+		padding-top:$gutter/2;
+		background: $c-bglight url("../img/shape-grid-1.png") repeat 0 0;
+		.box.wrap-n:first-child{
+			display: none;
+		}
+		.map-holder{
+			padding-bottom:$space*0.3;
+		}
+		.spinner.bg-spin:before{
+			margin:10% auto;
+		}
+		.wrap-n.al-c{
+			.button{
+				margin:0 auto $gutter/4;
+			}
+		}
+	}
+	.cards-map{
+		padding:$gutter $gutter/2 0;
+		.card-map{
+			margin-bottom: $gutter;
+			.spinner,.p-details,.link-cta{
+				display:none !important;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $bp--small) {
+	.map-projects{		
+		#map{
+			display: block;
+		}
+		.js-more-procards{
+			display: none;
+		}
+	}
+
+	.map-holder{
+		.card__icon,.card__infos .p-ss{
+			display:none;	
+		}
+
+		.cards-map{
+			.card-map{
+				max-width: 260px;
+				position: absolute;
+				margin-right: $gutter;
+				padding:$gutter*2 0;
+				right: 0;
+				top: 0;
+				height: 100%;
+				.card-project{
+					border-radius:$radius $radius 0 0;
+				}
+
+				&.anim-out-left{
+				  	right:-500px;
+				  	opacity:0;
+				  	&.unactive .card__img{
+				  		background-image:none !important;
+					}
+				}					
+			}
+		}
+	}
+	.map-holder .cards-map .card-map .card .card__img .spinner:before{
+		margin: 30% auto; 
+	}
+	
+}
+
+
+@media screen and (min-width: $bp--medium) {
+
+	.map-projects{
+
+		.filters{
+			flex: 1 1 50%;
+
+			&:first-child{
+				text-align: left;
+				justify-content: flex-start;
+			}
+			&:last-child{
+				text-align: right;
+				justify-content: flex-end;
+			}
+			&:last-child .h5,.h5{
+				margin-top: 0;
+			}
+		}
+		.map-filters{
+			&.first{
+				text-align: left;
+				justify-content: flex-start;
+				li{
+					margin:0 $space*0.1 $space*0.1 0;
+				}
+			}
+			&.second{
+				text-align: right;
+				justify-content: flex-end;
+				padding-top: 1.5rem;
+				li{
+					margin:0 0 $space*0.1 $space*0.1;
+				}
+			}
+
+		}
+	}
+}

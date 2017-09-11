@@ -1,0 +1,78 @@
+
+
+/*------------------------------*\
+
+	#TAGS
+	
+\*------------------------------*/
+
+.tags {
+	@extend %list-reset;
+	display: flex;
+    justify-content: center;
+	
+	li {
+		margin:0 $space*0.1 $space*0.1 0;
+		
+		&:last-child{
+			margin-right:0;	
+		}
+		
+		.tag{
+			color:$c-textwhite;			
+		}
+	}
+		
+}
+
+.tag {
+	@extend %transition;
+	font-family: $txt-font;
+	font-size:1.2rem;
+	border:2px solid #fff;
+	padding:$gutter/8 $gutter/4;
+	border-radius:$radius;	
+	display:inline-block;	
+	position: relative;
+	color: #fff;
+
+	&--green {
+		cursor: pointer;
+		border-color: #65aa04;
+		color: #65aa04;
+		background-color: transparent;
+
+		&::after {
+			display: none;
+		}
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		right: 0;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 6px 0 6px 6px;
+		border-color: transparent transparent transparent #fff;
+		transform: translate(100%, -50%);
+
+	}
+
+	&.is-inactive {
+		border-color: transparent!important;
+		background-color: rgba(#fff, 0.5);
+		cursor: default;
+
+		&::after {
+			display: none;
+		}
+	}
+
+	a {
+		color: #fff;
+	}
+
+}

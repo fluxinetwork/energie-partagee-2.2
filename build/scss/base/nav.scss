@@ -1,0 +1,907 @@
+/*------------------------------*\
+
+    #NAVIGATION
+
+\*------------------------------*/
+
+.top-display {
+  $txt-color: $c-textwhite;
+  height:3rem;  
+  background:$c-dark none;
+  text-align:right;
+  padding:0 $space/5;
+  z-index: 50;
+  position: relative;
+  
+  .p-ss{
+    margin:0;
+    font-size:1.2rem;
+    color:$txt-color;
+    padding-top: 0.5rem;
+    
+    a {
+      color:$txt-color;
+      border-bottom:1px solid #fff;
+    }
+  }
+  display: none;
+}
+
+
+$nav-shadow: 0 0 20px rgba(#000, 0.2);
+$dropdown-shadow: 0 10px 20px rgba(#000, 0.2);
+
+%nav-ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+%nav-typo {
+  font-family: $main-font;
+  font-size: 1.4rem;
+  font-weight: 700;  
+  line-height: 61px;
+  text-transform: uppercase;
+
+}
+
+/*------------------------------*\
+
+    # NAV BAR
+
+\*------------------------------*/
+
+.navbar {
+  @extend %transition;
+  display: flex;
+  position: fixed;
+  top: 30px;
+  width: 100%;
+  height: $navH;
+  padding: 0;
+  margin-top: 0;
+  padding-right: $gutter-thin;
+  z-index: 10;
+  
+  &::before {
+    @extend %transition;
+    content: '';
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: $c-main;
+  }
+}
+
+.navbar.is-compact {
+  top: 0;
+  box-shadow: $nav-shadow;
+  z-index: 100;
+}
+
+/*------------------------------*\
+
+    # LOGO
+
+\*------------------------------*/
+
+.no-touch .navbar__id {
+  animation: 1s $ease-out-quart 1 forwards slideDown;
+}
+
+.navbar__id,
+.navbar__id.is-compact,
+.no-touch nav:hover + .navbar__id {
+  @extend %transition;
+  flex: none;
+  order: 1;
+  position: relative;
+  z-index: 10;
+  width: 140px;
+  height: $navH;
+  padding: 1.2rem $gutter-thin 0 $gutter-thin;
+  background: $c-textwhite;
+  top: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.logo__img,
+.navbar__id.is-compact .logo__img,
+.no-touch nav:hover + .navbar__id .logo__img {
+  @extend %transition;
+  @include maxH(0);
+  width: 6rem;
+  height: 5.2rem;
+  margin-left: $gutter-thin;  
+}
+
+.logo__title,
+.navbar__id.is-compact .logo__title,
+.no-touch nav:hover + .navbar__id .logo__title {
+  margin: 0;
+  color: $c-main;  
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  line-height: 1.8rem;
+  height: 41px;
+
+  img {
+    height: 41px;
+  }
+  
+  span {
+    font-size: 2.23rem;
+  }
+}
+
+.navbar__id.is-compact .logo__title {
+  top: -6px;
+}
+
+.logo__title{
+  @extend %transition;
+	position:relative;
+	top:-4px;	
+}
+
+
+
+.navbar__id__social,
+.navbar__id.is-compact .navbar__id__social,
+.no-touch nav:hover + .navbar__id .navbar__id__social {
+  @extend %transition;
+  @extend %nav-ul;
+  @include maxH(0);
+  display: flex;
+  justify-content: space-between;
+  text-align:center;
+}
+
+.navbar__id__social a {
+  @extend %round-bt;
+  width: 2.8rem;
+  height: 2.8rem;
+  
+  i{
+		display: inline-block;
+		font-size:2.6rem;
+		margin-top:1px;
+	} 
+}
+
+
+/*------------------------------*\
+
+    # NAV
+
+\*------------------------------*/
+
+.nav {
+  @extend %transition;
+  flex: auto;
+  display: flex;
+  order: 2;
+}
+
+.nav__primary, .nav__secondary {
+  @extend %nav-ul;
+  flex: 0 0 auto;
+}
+.nav__primary {
+  @extend %transition;
+  border-radius: 0 $radius $radius 0;
+}
+.nav__secondary .nav__dropdown .container {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 14rem;
+  
+  .dropdown__item a::after, .page_item a::after{
+    right: 0;
+    left: auto;
+  }
+}
+
+.no-pp .nav__item {
+  padding: 0 $gutter-thin/2;
+  color: $c-textwhite;
+  cursor: pointer;
+
+  &:first-child {
+    margin-left: $gutter-thin/2;
+  }
+
+  .nav__item__title {
+    @include font-smoothing();
+  }
+}
+
+.no-pp .nav__item__title {
+  @extend %nav-typo;
+  @extend %transition;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+	  z-index:2;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent #fff transparent;
+    transform: scale(0);
+    transform-origin: center;
+    transition: transform 0.2s ease-out;
+  }
+}
+.touch .no-pp .nav__item.is-active .nav__item__title::after,
+.no-touch .no-pp .nav__item:hover .nav__item__title::after,
+.no-touch .no-pp .nav__item__title.is-active::after {
+   transform: scale(1);
+}
+.no-touch .no-pp .nav__item:hover .nav__item__title {
+  color: lighten($c-main, 60%);
+}
+
+/*------------------------------*\
+
+    # DROPDOWN
+
+\*------------------------------*/
+
+.no-pp .nav__dropdown {
+  @extend %nav-ul;
+  @extend %transition;
+  @include maxH(0);
+  position: absolute;
+  top: $navH;
+  left: 0;
+  width: 100%;
+  
+  &::before {
+    @extend %transition;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding-left: $gutter-thin;
+    padding-top: $gutter-thin*0.5;
+    padding-bottom: $gutter-thin*0.5;
+  }
+  
+  .dropdown__item, .page_item {
+    flex: none;
+
+    &.current_page_item a {
+      color: $c-dark; 
+
+      &::after {
+        background: $c-dark;
+        width: 100%;
+      }
+    }
+  }
+  
+  .dropdown__item a, .page_item a {
+    @extend %link;
+    display: block;
+    position: relative;
+    z-index: 1;
+    top: 2rem;
+    margin-right: $gutter-thin;
+    padding: $gutter-thin*.5 0;
+    opacity: 0;
+
+    &::after {
+      bottom: 8px;
+    }
+   }
+}
+
+.touch .no-pp .nav__item.is-active,
+.no-touch .no-pp .nav__item:hover {
+  .nav__dropdown {
+    max-height: 200px; 
+    z-index: 100;
+    box-shadow: $dropdown-shadow;
+  }
+  
+  .dropdown__item a, .page_item a {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+/*------------------------------*\
+
+    # PP NAV
+
+\*------------------------------*/
+
+.hamburger {
+  @extend %transition;
+  @extend .nav-bt;
+  visibility: hidden;
+  position: absolute;
+  margin-top: 1.2rem;
+  margin-left: $gutter-thin/2;
+  cursor: pointer;
+  transform: scale(0);
+  outline: none;
+  
+  &.is-visible {
+    position: relative;
+    visibility: visible;
+    transform: scale(1);
+  }
+
+  &::after {
+    content: '';
+    position: fixed;
+    bottom: -12px;
+	
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent #fff transparent;
+    transform: translateX(-50%) scale(0);
+    transform-origin: center bottom;
+    transition: transform 0.2s ease-out;
+  }
+}
+.hamburger.pp-visible::after,
+.no-touch .nav__pp:hover .hamburger::after {
+  transform: translateX(-50%) scale(1);
+}
+
+.pp {
+  @extend %transition;
+  @extend %nav-ul;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: $navH;
+  left: 0;
+  width: 100%;
+  padding: $gutter-thin;
+  background: #fff;
+  opacity: 0;
+  transform-origin: center top;
+  transform: scale(0);
+  box-shadow: $dropdown-shadow;
+}
+
+.no-touch .nav__pp:hover .pp,
+.pp.is-visible {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.pp .nav__item {
+  cursor: pointer;
+  
+  &:not(:last-child) {
+    margin-bottom: $gutter-thin;
+  }
+  
+  &.is-unfold {
+    .nav__item__title::after {
+      transform: rotate(135deg);
+    }
+    .nav__dropdown {
+      padding-top: 1rem;
+      max-height: 200px;
+    }
+  }
+}
+
+.pp .nav__item__title {
+  position: relative;
+  padding: 1.2rem $gutter-thin 0.9rem $gutter-thin;
+  background: $c-main;
+  border-radius: $radius;
+  color: $c-textwhite;
+  font: 700 1.3rem $main-font;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  @include font-smoothing();
+  display: block;
+ 
+  
+  &::after {
+    @extend %transition;
+    content: '';
+    position: absolute;
+    right: $gutter-thin;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: center;
+  }
+}
+
+.pp .nav__dropdown {
+  @extend %nav-ul;
+  @extend %transition;
+  opacity: 1;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+  max-height: 0;
+  
+  .container {
+    padding: 1rem 0 1rem $gutter-thin;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: #eeeeee;
+    }
+  }
+  
+  .dropdown__item, .page_item {
+    position: relative;
+    
+    &::before {
+      @extend %transition;
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 1rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: $c-main;
+      border: 4px solid #fff;
+      border-radius: 50%;
+      transform: scale(0);
+    }
+    
+    a {
+      display: block;
+      position: relative;
+      padding-left: $gutter-thin;
+      text-decoration: none;
+      font: 400 1.4rem $main-font;
+      color: $c-textlight;
+      line-height: 3.5rem;
+    }
+    
+    &:hover{
+      a {
+        color: #555 !important;
+      }
+
+      &::before {
+        transform: scale(1);
+      }
+    }
+  }
+    
+}
+
+/*------------------------------*\
+
+    # BUTTONS
+
+\*------------------------------*/
+
+.navbar__buttons {
+  @extend %nav-ul;
+  flex: none;
+  order: 3;
+  height: 100%;
+  align-items: center;
+  margin-left: $gutter-thin/2;
+}
+
+.nav-bt {
+  @extend %round-bt;
+  padding: 0;
+  color: #fff;
+  background-color: transparent;
+
+  &::before {
+    font-size: 32px;
+  }
+}
+
+.nav-bt--txt {
+  @extend .nav-bt;
+  display: flex;
+  align-items: center;
+  width: auto;
+  border-radius: 16px;
+  height: 32px;
+
+  span {
+    @extend %nav-typo;
+    margin-right: 10px;
+    margin-left: 5px;
+    padding-top: 0.1rem;
+    display: none;
+    line-height: 0;
+  }
+
+  &::before {
+    transform: translateX(-1px);
+  }
+}
+
+/*------------------------------*\
+
+    # CONNEXION
+
+\*------------------------------*/
+
+.connexion {
+  margin: 0 0 0 $gutter-thin/2;
+}
+
+%connect-wrap {
+  position: fixed;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  z-index: 100;
+  visibility: hidden;
+
+  &::before {
+    transition: height 0.4s $ease-out-cubic;
+    @include pseudo-bg($c-main);
+    height: 0;
+  }
+
+  span {
+    @include flex(center, true);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.2s 0.3s ease-in-out;
+    opacity: 0;
+
+    &.is-off {
+      display: none;
+    }
+  }
+
+  p {
+    font-size: 1.8rem;
+    color: #fff;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  a {
+    margin-top: 2rem;
+  }
+
+
+  &.is-active {
+    visibility: visible;
+
+    &::before {
+      height: 100%;
+    }
+
+    span {
+      opacity: 1;
+    }
+  }
+}
+
+.connexion_adherents {
+  @extend %connect-wrap;
+  top: 0;
+}
+
+.connexion_actionnaires {
+  @extend %connect-wrap;
+  bottom: 0;
+
+  button {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &::before {
+    background: darken($c-main, 10%);
+    bottom: 0;
+    top: auto;
+     transition-delay: 0.1s;
+  }
+
+}
+
+/*------------------------------*\
+
+    # SEARCH
+
+\*------------------------------*/
+
+.nav__search {
+  display: none;
+  align-items: center;
+  flex: auto;
+  order: 2;
+  margin-left: $gutter-thin;
+
+  label {
+    display: none;
+  }
+}
+
+$c-placeholder : #fff;
+@mixin placeholder() {
+  color: $c-placeholder;
+  font-weight: 400;
+  line-height: $navH*1.15;
+  opacity: 0.7;
+  @include font-smoothing(false);
+}
+.nav__search__input {
+  @extend %nav-typo;
+  line-height: 65px;
+  flex: 1 0 auto;
+  border: 0;
+  background-color: transparent;
+  color:$c-textwhite;
+  @include font-smoothing();
+
+  &:focus {
+    outline: 0;
+  }
+  
+  &:-moz-placeholder { @include placeholder(); }
+  &:-ms-input-placeholder { @include placeholder(); }
+  &::-moz-placeholder { @include placeholder(); }
+  &::-webkit-input-placeholder { @include placeholder(); }
+}
+.nav__search__submit {
+  background-color: transparent;
+  padding: 0;
+
+}
+
+
+.nav__search__close {
+  margin-left: $gutter-thin/2;
+}
+
+.nav__search__submit,
+.nav__search__close {
+  &:hover {    
+    transform: scale(1.1);
+  }
+
+}
+
+
+.navbar.is-search {
+  &::before {
+    background: $c-focus;
+  }
+
+  .nav, .navbar__buttons {
+    display: none;
+  }
+
+  .navbar__id.is-compact .logo__title {
+    color: $c-focus;
+  }
+
+  .nav__search {
+    display: flex;
+  }
+}
+
+
+/*------------------------------*\
+
+    # MEDIA QUERIES 
+
+\*------------------------------*/
+/* MAX */
+
+@media screen and (max-width: 420px) {
+  .navbar.is-search .navbar__id {
+    position: absolute;
+    top: -$navH;
+  }
+}
+@media screen and (max-width: 640px) {
+  
+  .navbar.is-search .logo__title {
+    color: $c-focus;
+  }
+  .logo__title {
+    top: -5px;
+  }
+}
+
+/* MIN */
+
+@media screen and (min-width: 420px) {
+  .navbar.is-compact::before {
+    width: 100%;
+  }
+  .navbar.stick-top {
+    margin-top: 0;
+  }
+  .nav__pp {
+    position: relative;
+  }
+  .pp {
+    left: 1.5rem;
+    width: 320px;
+    transform: translateX(-43.5%) scale(0);
+  }
+  .pp .nav__item.is-unfold {
+    .nav__item__title::after {
+      transform: translateY(-80%) rotate(135deg);
+    }
+    .nav__dropdown {
+      max-height: 200px;
+      padding-top: 1rem;
+    }
+  }
+
+  .no-touch .nav__pp:hover .pp,
+  .pp.is-visible {
+    transform: translateX(-43.5%) scale(1);
+  }
+
+  .nav-bt--txt {
+    border: 2px solid #fff;
+    span {
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .top-display{
+    padding-left:$space/2;  
+    padding-right:$space/2; 
+
+    .p-ss{
+      font-size:1.4rem;
+      padding-top: 0.3rem;
+    } 
+  }
+
+  .navbar {
+    padding: 0 $gutter-thin*2.5;   
+    //top: 60px; 
+  }
+
+  .navbar__id {
+    top: -3rem;
+    height: 172px;
+    padding: $gutter-thin $gutter-thin 0 $gutter-thin;
+    border-radius: 0 0 $radius $radius;
+    box-shadow: $bshadow;
+
+    &.is-compact {
+      top: 0;
+      padding-top: 1.2rem;
+    }
+  }
+  .logo__img {
+    @include maxH(52px);
+  }
+  .logo__title {
+    margin: 0.8rem auto;
+    color: #000;
+  }
+  .navbar__id__social {
+    @include maxH(2.8rem);
+  }
+
+  .no-pp .nav__dropdown .container {
+    padding-left: 5rem;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .no-pp  .nav__dropdown {
+    .container {
+      padding-left:7rem;
+      padding-top: $gutter-thin*0.75;
+      padding-bottom: $gutter-thin*0.75;
+    }
+
+    .dropdown__item a, .page_item a {
+      padding: $gutter-thin*0.75 0;
+      font-size: 1.4rem;
+
+      &::after {
+        bottom: 1.1rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 930px) {
+  .navbar {
+    padding: 0 $gutter-thin*2.5;
+  }
+}
+
+
+@media screen and (min-width: 1050px) {
+  .no-pp .nav__dropdown .container {
+    padding-left: 210px;
+    padding-top: $gutter-thin;
+    padding-bottom: $gutter-thin;
+
+    .dropdown__item a, .page_item a {      
+
+      &::after {
+        bottom: 1.6rem;
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 1220px) {
+  .navbar::before {
+    width: 30%;
+  }
+  .navbar.is-search::before {
+    width: 100%;
+  }
+
+  .no-pp .nav__dropdown .dropdown__item a,
+  .no-pp .nav__dropdown .page_item a {
+    font-size: 1.8rem;
+    font-weight: 700;
+
+    &::after {
+      height: 2px;
+    }
+  }
+  
+  .nav__primary {
+    padding-right: $gutter-thin/2;
+    background: $c-main;
+  }
+  
+  .nav__secondary {
+    margin: 0 0 0 auto;
+
+    .nav__dropdown .container {
+      padding-right: 16rem;
+    }
+  }
+}

@@ -1,0 +1,268 @@
+/*------------------------------*\
+
+    #CLASS
+
+\*------------------------------*/
+/* ANIMATION */
+@keyframes slideUpOpacity {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+/* TRANSITIONS */
+.transition {
+  transition: all 0.2s ease-in-out;
+}
+
+/* CLEARFIX */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* LIST RESET */
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* BASIC STATES */
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.is-none {
+  display: none !important;
+}
+
+.is-muted {
+  opacity: 0.3;
+}
+
+.has-pointer {
+  cursor: pointer;
+}
+
+.al-c {
+  text-align: center;
+}
+
+.img-reponsive {
+  width: 100%;
+}
+
+.anim-out {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* BREAKPOINTS */
+/* COLORS */
+/* Layout */
+/* Nav */
+/* Box - Border */
+/* Typos */
+/* Typos sizes */
+/*------------------------------*\
+
+    #HOMEPAGE
+
+\*------------------------------*/
+.home .header-bloc {
+  background: url("../img/energie-partagee-homepage-header.jpg") no-repeat center;
+  background-size: cover;
+  padding: 10rem 2rem 7.5rem 2rem;
+}
+.home .header-bloc h1 {
+  animation: 1s cubic-bezier(0.165, 0.84, 0.44, 1) 1 forwards slideUpOpacity;
+}
+.home .header-bloc .wrap-l {
+  padding: 0;
+}
+
+.key-nums {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.key-nums .key-nums__item {
+  font-size: 1.8rem;
+  padding: 0 2.5rem;
+  margin-bottom: 2rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.key-nums .key-nums__item__num {
+  font-family: "avantgarde", Arial;
+  font-size: 5rem;
+  display: block;
+  font-weight: bold;
+  line-height: 1;
+}
+.key-nums .key-nums__item__txt {
+  flex: 1 0 auto;
+  font-size: 1.6rem;
+}
+
+.steps-intro ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.steps-intro .box__item {
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+  text-align: left;
+}
+.steps-intro .box__item__img {
+  width: 110px;
+  margin-right: 2rem;
+}
+.steps-intro .p-ss {
+  max-width: 230px;
+  margin: 0 auto 1rem;
+  color: #777777;
+}
+
+.top-credibility .wrap-n {
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.top-credibility .wrap-n.ready-anim {
+  transform: translateY(30%);
+}
+
+@media screen and (max-width: 600px) {
+  .wrap-n,
+  .wrap-l:not(.steps-introo) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media screen and (max-width: 830px) {
+  .home .header-bloc .button {
+    margin-top: 4rem;
+  }
+
+  .key-nums {
+    animation: slideNums cubic-bezier(0.165, 0.84, 0.44, 1) 12s infinite forwards;
+  }
+
+  @keyframes slideNums {
+    0% {
+      transform: translateX(0);
+    }
+    27% {
+      transform: translateX(0);
+    }
+    33% {
+      transform: translateX(-100%);
+    }
+    60% {
+      transform: translateX(-100%);
+    }
+    66% {
+      transform: translateX(-200%);
+    }
+    93% {
+      transform: translateX(-200%);
+    }
+    97% {
+      transform: translateX(-300%);
+    }
+    97.01% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  .key-nums__item {
+    flex: 1 0 100%;
+  }
+
+  .key-nums__item__num {
+    margin-right: 0 !important;
+  }
+
+  .home .courtcircuit {
+    padding-bottom: 0;
+  }
+}
+@media screen and (min-width: 600px) {
+  .home .header-bloc {
+    padding: 20rem 4rem 15rem 4rem;
+  }
+
+  .wrap-n {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
+  .key-nums__item__txt {
+    font-size: 1.8rem;
+  }
+
+  .steps-intro ul {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .steps-intro .box__item {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+  }
+  .steps-intro .box__item__img {
+    width: 120px;
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+  .steps-intro .box__item__img img {
+    margin: 0 auto;
+  }
+  .steps-intro .p-ss {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 830px) {
+  .steps-intro .box__item__img {
+    width: 140px;
+  }
+  .steps-intro .box__item {
+    padding: 0 2rem;
+  }
+
+  .key-nums {
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .steps-intro .box__item__img {
+    width: 200px;
+  }
+}

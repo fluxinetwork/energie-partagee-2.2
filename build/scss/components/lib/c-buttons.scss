@@ -1,0 +1,116 @@
+%link {
+  @extend %transition;
+  position: relative;
+  font-family: $main-font;
+  font-size: 1.2rem;
+  color: $c-main;
+  text-decoration: none;
+  text-transform: uppercase;
+  
+  &::after {
+    @extend %transition;
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: $c-main;
+  }
+  
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: $bp--small) {
+    font-size: 1.4rem;
+  }
+}
+
+
+%button{	
+  color: $c-main;
+	cursor:pointer;
+  display: inline-block;
+  font-family: $main-font;
+  font-weight: bold;
+  padding: $space*0.165 $space*0.2 $space*0.14;
+  text-transform: uppercase;
+	margin-top:$space*0.6;
+	position:relative;
+	z-index:5;
+	background:none;
+  @include font-smoothing();
+	
+	&:before{
+		background: #000 none;		
+		border-radius: $radius;
+		content: "";
+		height: 100%;
+		left: 0;
+		margin: 0 auto;
+		opacity: 0.1;
+		position: absolute;
+		right: 0;
+		top: 4px;
+		width: 94%;
+		z-index: -1;
+	}
+	
+	&:after{
+		background: $c-textwhite none;	
+		border-radius: $radius;
+		content: "";		
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: -1;
+	}
+}
+
+%button,
+%button-round,
+%bt,
+%round-bt {
+  outline: 0
+}
+
+%button-round{
+	background: transparent none;    
+    border-radius: 50%;
+    color: $c-textwhite;	
+	cursor: pointer;
+    display: inline-block;
+    font-size: 6.6rem;
+    height: 6.6rem;
+    line-height: 1;
+    padding: 0;
+    text-align: center;
+    width: 6.6rem;
+}
+
+
+%bt {
+  @extend %transition;
+  display: block;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+}
+
+%round-bt {
+  @extend %bt;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+}
+
+%transparent-bt {
+  @extend %bt;
+  background-color: transparent;
+  border: 2px solid $c-textwhite;
+}

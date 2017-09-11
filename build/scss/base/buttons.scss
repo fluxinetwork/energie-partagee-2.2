@@ -1,0 +1,212 @@
+/*------------------------------*\
+
+    #BUTTONS
+
+\*------------------------------*/
+$transition: all 0.3s $ease-out-quart;
+.button{	
+	transition: $transition;
+	@extend %button;
+	
+	line-height:1;
+	
+	[class^="icon-"], [class*=" icon-"]{
+		font-size:2rem;
+		vertical-align: text-bottom;
+		margin-right:0.4rem;	
+	}
+
+	&::before {
+		transition: $transition;
+	}
+
+	&:hover {	  
+	    transform: scale(1.05);	   
+	  &::before {	    
+	    transform: scale(0.95) translateY(5%);	    
+	    filter: blur(1px);
+	  }
+	}
+	
+}
+.button.cta{
+	padding: unpack($space*0.16 $space*0.2 $space*0.14 $space*0.2);
+}
+.button.cta.has-icon {
+	padding: unpack($space*0.16 $space*0.2 )!important;
+}
+.home .button.cta i {
+	display: none;
+}
+
+.button.green{	
+	color:#fff;
+	
+	&:after{
+		background: $c-main none;
+	}		
+}
+
+.button-round{
+	transition: $transition;
+	@extend %button-round;
+
+	&:hover {		 
+		transform: scale(1.1);
+	}
+
+	.spinner{
+		&:before,&:after{
+			margin:0 auto;
+		}
+	}
+}
+
+.button-round.grey{
+	color:$c-light;
+}
+
+.social {
+	padding:0;
+	margin:0;	
+	font-size: 2.2rem;	
+		
+	li {
+		list-style-type:none;	
+		display:inline-block;
+		margin-right:$space*0.05;
+		&:last-child { margin-right:0;}	
+	}
+	
+	[class^="social--"], [class*=" social--"]{
+		position: relative;
+    	border-radius: 50%;    	
+    	display: block;
+    	text-align: center;
+		padding: 0;
+		cursor: pointer;
+		width:4rem;
+		height: 4rem;
+		background-color: transparent;
+
+		i {			
+			
+			display: inline-block;
+			font-size: 4rem;
+			vertical-align: middle;	
+			
+			&::before {
+				position: relative;
+				z-index: 2;
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 90%;
+				height: 90%;
+				margin: 5%;
+				background: #fff none;
+				z-index: 0;
+				border-radius: 50%; 
+			}
+		}
+	}
+	
+}
+
+.icon-facebook_40,.icon-facebook_26{
+	color: #3b5998;	
+}
+.icon-twitter_40,.icon-twitter_26{
+	color: #55acee;	
+}
+.icon-youtube_40,.icon-youtube_26{
+	color: #dc2925;	
+}
+
+
+
+.link {
+ 	@extend %link;
+}
+
+.touch .link::after {
+	width: 100%;
+}
+
+.link-cta{
+	color: $c-main;
+	cursor:pointer;
+  	display: inline-block;
+  	font-family: $main-font;
+  	font-weight: normal;
+  	line-height: 1;  	
+  	text-transform: uppercase;
+  	width: 100%;
+  	
+	i,
+	span {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	i {
+		font-size: 3.2rem;
+		margin-right: $gutter/4;
+	}
+}
+
+
+.minicard{
+	transition: $transition;
+
+	&::before{
+		transition: $transition;
+	}
+
+	&:hover {	  
+	    transform: scale(1.05);	   
+	  &::before {	    
+	    transform: scale(0.95) translateY(5%);	    
+	    filter: blur(1px);
+	  }
+	}
+
+	.link {
+		@include font-smoothing(false);
+	}
+
+}
+/* EDIT LINK FOR ADMINS */
+
+.edit{	
+	background: $c-dark;
+    padding: $space*0.1 $gutter/2 $space*0.15 $gutter/2;
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+	border-radius: $radius;
+	z-index:20;
+
+	a {
+		color: #fff;
+		&::after {
+			display: none;
+		}
+	}
+}
+
+
+@media screen and (min-width: $bp--small) {	
+	.holder-button{
+		margin-top:3rem; 	
+	}	
+}
+@media screen and (min-width: $bp--medium) {	
+	.button-round{
+		display:block;
+	}
+}

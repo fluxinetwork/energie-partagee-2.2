@@ -1,0 +1,303 @@
+/*------------------------------*\
+
+    #CLASS
+
+\*------------------------------*/
+/* ANIMATION */
+@keyframes slideUpOpacity {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+/* TRANSITIONS */
+.card-news, .card-news--expand, .card-news--big, .card-news .card__infos, .card-news--expand .card__infos, .card-news--big .card__infos, .card-news .card__title, .card-news--expand .card__title, .card-news--big .card__title, .card-news .tag, .card-news--expand .tag, .card-news--big .tag, .card-project, .transition {
+  transition: all 0.2s ease-in-out;
+}
+
+/* CLEARFIX */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* LIST RESET */
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* BASIC STATES */
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.is-none {
+  display: none !important;
+}
+
+.is-muted {
+  opacity: 0.3;
+}
+
+.has-pointer {
+  cursor: pointer;
+}
+
+.al-c {
+  text-align: center;
+}
+
+.img-reponsive {
+  width: 100%;
+}
+
+.p-details .p-details__equi:before {
+  border-style: solid;
+  border-width: 0 0.8rem 1.2rem;
+  content: "";
+  height: 0;
+  left: 3.2rem;
+  position: absolute;
+  top: -1rem;
+  width: 0;
+}
+
+.anim-out {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* BREAKPOINTS */
+/* COLORS */
+/* Layout */
+/* Nav */
+/* Box - Border */
+/* Typos */
+/* Typos sizes */
+.card, .card-news, .card-news--expand, .card-news--big {
+  color: #fff;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.card:hover .card__img, .card-news:hover .card__img, .card-news--expand:hover .card__img, .card-news--big:hover .card__img {
+  transform: scale(1.04);
+}
+.card .card__infos, .card-news .card__infos, .card-news--expand .card__infos, .card-news--big .card__infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+}
+.card .card__infos .p-ss, .card-news .card__infos .p-ss, .card-news--expand .card__infos .p-ss, .card-news--big .card__infos .p-ss {
+  color: #fff;
+}
+.card .card__title, .card-news .card__title, .card-news--expand .card__title, .card-news--big .card__title {
+  margin-bottom: 0;
+}
+.card .card__img, .card-news .card__img, .card-news--expand .card__img, .card-news--big .card__img {
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.card .card__img i, .card-news .card__img i, .card-news--expand .card__img i, .card-news--big .card__img i {
+  z-index: 1;
+}
+.card .card__icon, .card-news .card__icon, .card-news--expand .card__icon, .card-news--big .card__icon {
+  bottom: 0.5rem;
+  left: 0.5rem;
+  position: absolute;
+}
+.card .card__icon:before, .card-news .card__icon:before, .card-news--expand .card__icon:before, .card-news--big .card__icon:before {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 10rem;
+}
+
+.minicard {
+  display: flex;
+  flex: 1 1 0;
+  flex-flow: column nowrap;
+  height: 100%;
+  justify-content: flex-start;
+  margin-top: 0;
+  padding: 2rem;
+  text-transform: none;
+}
+.minicard:after {
+  background: none #65aa04;
+}
+.minicard .clikable__title {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.minicard .p-ss {
+  color: #fff;
+  font-weight: normal;
+}
+.minicard .link {
+  color: #fff;
+  font-weight: normal;
+  margin-top: auto;
+}
+.minicard .link i {
+  font-size: 3.2rem;
+  align-self: center;
+  margin-right: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.p-details {
+  background: #fff none;
+  padding-top: 3rem;
+}
+.p-details .p-details__nrg {
+  font-size: 10rem;
+  line-height: 0;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.p-details .p-details__nrg i {
+  border-radius: 50%;
+}
+.p-details .p-details__infos {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 3rem 2rem;
+}
+.p-details .p-details__infos li {
+  margin-bottom: 2rem;
+  padding-left: 3rem;
+  position: relative;
+}
+.p-details .p-details__infos li:last-child {
+  margin-bottom: 0;
+}
+.p-details .p-details__infos li:before {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  left: 0;
+  position: absolute;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 2rem;
+}
+.p-details .p-details__infos .p-details__infos__loca:before {
+  content: "\e91b";
+}
+.p-details .p-details__infos .p-details__infos__prod:before {
+  content: "\e919";
+}
+.p-details .p-details__infos strong {
+  display: block;
+}
+.p-details .p-details__equi {
+  padding: 1rem 2rem;
+  position: relative;
+}
+.p-details .p-details__nrg i, .p-details .p-details__equi {
+  color: #fff;
+}
+
+.p-details .p-details__equi:before {
+  border-style: solid;
+  border-width: 0 0.8rem 1.2rem;
+  content: "";
+  height: 0;
+  left: 3.2rem;
+  position: absolute;
+  top: -1rem;
+  width: 0;
+}
+
+/*------------------------------*\
+
+	#CARDS
+	
+\*------------------------------*/
+.card-news:hover .card__infos, .card-news--expand:hover .card__infos, .card-news--big:hover .card__infos {
+  opacity: 0;
+}
+.card-news .card__infos, .card-news--expand .card__infos, .card-news--big .card__infos {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.card-news .tag, .card-news--expand .tag, .card-news--big .tag {
+  text-transform: uppercase;
+}
+
+.card-project {
+  overflow: hidden;
+  background-color: transparent;
+}
+.card-project .card__img::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(40deg, rgba(0, 0, 0, 0.3) 0%, transparent 50%);
+  z-index: 0;
+}
+.card-project .p-ss {
+  margin-top: 0;
+}
+
+.p-details {
+  border-radius: 3px;
+}
+
+.p-details__equi {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .p-details {
+    padding-top: 4rem;
+  }
+  .p-details .p-details__nrg {
+    margin-bottom: 4rem;
+  }
+}

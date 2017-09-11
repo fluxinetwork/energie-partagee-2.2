@@ -1,0 +1,141 @@
+
+
+/*------------------------------*\
+
+    #SEARCH
+
+\*------------------------------*/
+
+.search .header-bloc.no-result {
+	padding-bottom: 6rem;
+}
+
+.wrap-search {
+	padding-top: $gutter/2;
+	position: relative;
+
+	h3 {
+		@extend %transition;
+		&:hover {
+			color: $c-main;
+		}
+	}
+}
+
+.search .filtres {
+	display: flex;
+	padding: $gutter/2;
+	background: $c-bglight;
+	border-radius: $radius $radius 0 0;
+
+	h5 {
+		margin: $gutter/4 $gutter/2 $gutter/8 0;
+	}
+	select {
+		background: $c-focus;
+		color: #fff;
+	}	
+
+	&.is-fixed {
+		justify-content: center;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		z-index: 20;
+		transform: translateX(0);
+		animation: 0.4s $ease-out-quart 1 forwards slideUpOpacity;
+	}
+}
+
+.searchresults {
+	@extend %list-reset;
+	padding-top: $gutter;
+}
+.searchresults__item {
+	margin-bottom: $gutter;
+
+	.tags {
+		justify-content: flex-start;
+	
+		border-radius: 3px;
+		margin-bottom: $gutter/2;
+	}
+
+	.tag {
+		margin-bottom: 0;
+		border-color: $c-dark;
+
+		&.is-inactive {
+			background: rgba($c-dark, 0.5)!important;
+		}
+
+		&::after {
+			border-color: transparent transparent transparent $c-dark;
+		}
+		
+		a {
+			color: $c-dark!important;
+		}
+	}
+}
+
+.s-pagination {
+	display: flex;
+
+	.page-numbers {
+		@extend %round-bt;
+		border: 2px solid $c-light;
+		@include flex(center);
+		color: $c-light;
+		margin-right: $gutter/4;
+
+		&:hover {	   
+		    border-color: $c-dark;
+		    color: $c-dark;  
+		}
+
+		&.current,
+		&.dots {
+			color: #fff;
+			cursor: default;
+
+			&:hover {	  
+			    transform: none;
+			}
+		}
+
+		&.current {
+			background: $c-dark;
+			border-color: $c-dark;
+		}
+
+		&.dots {
+			align-items: flex-start;
+			background: $c-light;
+
+			&:hover {	  
+			    border-color: $c-light;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $bp--small) {
+
+	.wrap-search {
+		padding-top: $gutter;
+	}
+}
+
+@media screen and (min-width: $bp--medium) {
+	.wrap-search {
+		padding-top: 0;
+	}
+	.search .filtres {
+		padding: $gutter/2 8rem;
+	}
+	.searchresults {
+		padding-top: $gutter*1.5;
+	}
+}
