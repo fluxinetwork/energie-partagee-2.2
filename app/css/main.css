@@ -589,7 +589,7 @@ html {
 .navbar__id.is-compact .logo__img,
 .no-touch nav:hover + .navbar__id .logo__img, .logo__title, .navbar__id__social,
 .navbar__id.is-compact .navbar__id__social,
-.no-touch nav:hover + .navbar__id .navbar__id__social, .nav, .nav__primary, .no-pp .nav__item__title, .no-pp .nav__dropdown, .no-pp .nav__dropdown::before, .pp, .pp .nav__item__title::after, .pp .nav__dropdown, .pp .nav__dropdown .dropdown__item::before, .pp .nav__dropdown .page_item::before, .l-tabs__content, .l-tabs__content__list, .card-news, .card-news--expand, .card-news--big, .card-news .card__infos, .card-news--expand .card__infos, .card-news--big .card__infos, .card-news .card__title, .card-news--expand .card__title, .card-news--big .card__title, .card-news .tag, .card-news--expand .tag, .card-news--big .tag, .card-project, .clikarde__item, .accordion .accordion__head, .accordion .accordion__head i, .isogrid .main-isogrid .item, .galerie.galerie_damier a, .map-holder .cards-map .card-map, .map-holder .cards-map .card-map .card .card__img .spinner, .tag, .c-formation, .single.touch #map::after, .single.touch .map-holder::after, .following--clone .box__social i, .action-projet, .wrap-search h3, .transition, .c-widget, .c-widget__message__txt span::before {
+.no-touch nav:hover + .navbar__id .navbar__id__social, .nav, .nav__primary, .no-pp .nav__item__title, .no-pp .nav__dropdown, .no-pp .nav__dropdown::before, .pp, .pp .nav__item__title::after, .pp .nav__dropdown, .pp .nav__dropdown .dropdown__item::before, .pp .nav__dropdown .page_item::before, .l-tabs__content, .l-tabs__content__list, .card-news, .card-news--expand, .card-news--big, .card-news .card__infos, .card-news--expand .card__infos, .card-news--big .card__infos, .card-news .card__title, .card-news--expand .card__title, .card-news--big .card__title, .card-news .tag, .card-news--expand .tag, .card-news--big .tag, .card-project, .clikarde__item, .accordion .accordion__head, .accordion .accordion__head i, .isogrid .main-isogrid .item, .galerie.galerie_damier a, .map-holder .cards-map .card-map, .map-holder .cards-map .card-map .card .card__img .spinner, .tag, .c-formation, .single.touch #map::after, .single.touch .map-holder::after, .following--clone .box__social i, .action-projet, .wrap-search h3, .transition, .c-widget, .c-widget__message__txt span::before, .following--clone {
   transition: all 0.2s ease-in-out;
 }
 
@@ -790,6 +790,15 @@ html {
 .c-solai .card__icon:before {
   content: "";
 }
+.c-solai .following--clone {
+  background-color: #e9af00;
+}
+.c-solai .following--clone .icon-nrj {
+  color: #e9af00;
+}
+.c-solai .following--clone .box__social button i {
+  color: #b68900 !important;
+}
 
 .c-eolie .etapes .dotline__step > .dot,
 .c-eolie .etapes .dotline::before,
@@ -917,6 +926,15 @@ html {
 }
 .c-eolie .card__icon:before {
   content: "";
+}
+.c-eolie .following--clone {
+  background-color: #5ab1bb;
+}
+.c-eolie .following--clone .icon-nrj {
+  color: #5ab1bb;
+}
+.c-eolie .following--clone .box__social button i {
+  color: #4296a0 !important;
 }
 
 .c-micro .etapes .dotline__step > .dot,
@@ -1046,6 +1064,15 @@ html {
 .c-micro .card__icon:before {
   content: "";
 }
+.c-micro .following--clone {
+  background-color: #5268b9;
+}
+.c-micro .following--clone .icon-nrj {
+  color: #5268b9;
+}
+.c-micro .following--clone .box__social button i {
+  color: #3e529a !important;
+}
 
 .c-bioma .etapes .dotline__step > .dot,
 .c-bioma .etapes .dotline::before,
@@ -1173,6 +1200,15 @@ html {
 }
 .c-bioma .card__icon:before {
   content: "";
+}
+.c-bioma .following--clone {
+  background-color: #83ab00;
+}
+.c-bioma .following--clone .icon-nrj {
+  color: #83ab00;
+}
+.c-bioma .following--clone .box__social button i {
+  color: #5c7800 !important;
 }
 
 .c-geoth .etapes .dotline__step > .dot,
@@ -1302,6 +1338,15 @@ html {
 .c-geoth .card__icon:before {
   content: "";
 }
+.c-geoth .following--clone {
+  background-color: #e7511e;
+}
+.c-geoth .following--clone .icon-nrj {
+  color: #e7511e;
+}
+.c-geoth .following--clone .box__social button i {
+  color: #be3f14 !important;
+}
 
 .c-econo .etapes .dotline__step > .dot,
 .c-econo .etapes .dotline::before,
@@ -1429,6 +1474,15 @@ html {
 }
 .c-econo .card__icon:before {
   content: "";
+}
+.c-econo .following--clone {
+  background-color: #b7115b;
+}
+.c-econo .following--clone .icon-nrj {
+  color: #b7115b;
+}
+.c-econo .following--clone .box__social button i {
+  color: #880d44 !important;
 }
 
 /*------------------------------*\
@@ -5378,7 +5432,7 @@ input {
     margin-right: 4rem;
     padding: 8rem 0;
     right: 0;
-    top: 0;
+    top: -40px;
     height: 100%;
   }
   .map-holder .cards-map .card-map .card-project {
@@ -5579,7 +5633,7 @@ input {
 .navbar__id.is-compact .logo__img,
 .no-touch nav:hover + .navbar__id .logo__img, .logo__title, .navbar__id__social,
 .navbar__id.is-compact .navbar__id__social,
-.no-touch nav:hover + .navbar__id .navbar__id__social, .nav, .nav__primary, .no-pp .nav__item__title, .no-pp .nav__dropdown, .no-pp .nav__dropdown::before, .pp, .pp .nav__item__title::after, .pp .nav__dropdown, .pp .nav__dropdown .dropdown__item::before, .pp .nav__dropdown .page_item::before, .l-tabs__content, .l-tabs__content__list, .card-news, .card-news--expand, .card-news--big, .card-news .card__infos, .card-news--expand .card__infos, .card-news--big .card__infos, .card-news .card__title, .card-news--expand .card__title, .card-news--big .card__title, .card-news .tag, .card-news--expand .tag, .card-news--big .tag, .card-project, .clikarde__item, .accordion .accordion__head, .accordion .accordion__head i, .isogrid .main-isogrid .item, .galerie.galerie_damier a, .map-holder .cards-map .card-map, .map-holder .cards-map .card-map .card .card__img .spinner, .tag, .c-formation, .single.touch #map::after, .single.touch .map-holder::after, .following--clone .box__social i, .action-projet, .wrap-search h3, .transition, .c-widget, .c-widget__message__txt span::before {
+.no-touch nav:hover + .navbar__id .navbar__id__social, .nav, .nav__primary, .no-pp .nav__item__title, .no-pp .nav__dropdown, .no-pp .nav__dropdown::before, .pp, .pp .nav__item__title::after, .pp .nav__dropdown, .pp .nav__dropdown .dropdown__item::before, .pp .nav__dropdown .page_item::before, .l-tabs__content, .l-tabs__content__list, .card-news, .card-news--expand, .card-news--big, .card-news .card__infos, .card-news--expand .card__infos, .card-news--big .card__infos, .card-news .card__title, .card-news--expand .card__title, .card-news--big .card__title, .card-news .tag, .card-news--expand .tag, .card-news--big .tag, .card-project, .clikarde__item, .accordion .accordion__head, .accordion .accordion__head i, .isogrid .main-isogrid .item, .galerie.galerie_damier a, .map-holder .cards-map .card-map, .map-holder .cards-map .card-map .card .card__img .spinner, .tag, .c-formation, .single.touch #map::after, .single.touch .map-holder::after, .following--clone .box__social i, .action-projet, .wrap-search h3, .transition, .c-widget, .c-widget__message__txt span::before, .following--clone {
   transition: all 0.2s ease-in-out;
 }
 
@@ -7386,18 +7440,23 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   padding: 10px;
 }
 
-.widget-close {
+.c-widget__close {
   position: absolute;
-  width: 18px;
-  height: 18px;
-  text-align: center;
-  background-color: white;
+  width: 20px;
+  height: 20px;
+  background-color: #122c33;
+  color: #fff;
   border-radius: 50%;
-  display: inline-block;
-  font-size: 12px;
-  bottom: -8px;
-  right: -8px;
-  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-size: 10px;
+  bottom: -9px;
+  right: -9px;
+  z-index: 1;
+  font-family: verdana;
 }
 
 /*------------------------------*\
@@ -7876,7 +7935,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .following--clone {
-  display: none;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -7929,11 +7987,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .following--clone .box__btn .cta::after {
   background: #122c33;
 }
-.following--clone.slide-up {
-  animation: slideUp cubic-bezier(0.165, 0.84, 0.44, 1) 0.6s 1 forwards;
-}
-.following--clone.slide-down {
-  animation: slideDownFromOrigin cubic-bezier(0.165, 0.84, 0.44, 1) 0.6s 1 forwards;
+.following--clone.is-visible {
+  transform: translateY(0);
 }
 
 .input-n-btn .box__solo {
@@ -8044,13 +8099,24 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   top: 6px;
   left: 6px;
   position: absolute;
-  animation: pulse 1s infinite forwards;
+  animation: pulse .8s infinite forwards;
 }
 .dotline__step.is-inactive .dot {
   border: 2px solid #65aa04;
   background: #fff;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /* REPARTITION */
 .graphbar {
   display: flex;

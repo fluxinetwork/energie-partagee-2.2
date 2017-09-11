@@ -17,7 +17,7 @@ $('.js-widget').on('mouseenter', function () {
 	}
 });
 
-$('.fc').waypoint(function() {
+$('.fc, .js-toggle-follow-clone').waypoint(function() {
 	$('.js-widget').toggleClass('is-off');
 }, {offset: '50%'});
 

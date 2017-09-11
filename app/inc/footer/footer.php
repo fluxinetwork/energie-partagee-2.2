@@ -1,4 +1,4 @@
-<footer class="footer section">
+<footer class="footer section js-footer">
     <div class="wrap-n">
     	<div class="box">
             <div class="box__half">
@@ -41,6 +41,7 @@
         
         <nav class="footer__nav">
            <a class="link" href="<?php echo get_site_url(); ?>/contact/">Contact</a>
+           <a class="link" href="<?php echo get_permalink(968); ?>/contact/">Presse</a>
            <a class="link" href="<?php echo get_site_url(); ?>/mentions-legales/">Mentions légales </a>
         </nav>
         

@@ -38,12 +38,12 @@
 		$post_img_array = wp_get_attachment_image_src($post_img_id, 'post-thumb', true);
 		$post_img_url = $post_img_array[0];
 		$main_url = $post_img_url;
-		$main_image = '<div class="wrap-extend"><img class="img-responsive" src="'.$post_img_url.'"></div>';
+		$main_image = '<div class="wrap-extend wrap-extend--firstImg"><img class="img-responsive" src="'.$post_img_url.'"></div>';
     $thumb_url_a = wp_get_attachment_image_src($post_img_id, 'post-thumb', true);
     $thumb_url = $thumb_url_a[0];
 	elseif($main_img_add == 1):
     $main_image_obj = get_field( 'main_image' );
-		$main_image = '<div class="wrap-extend"><img class="img-responsive" src="'.$main_image_obj['sizes']['post-thumb'].'"></div>';
+		$main_image = '<div class="wrap-extend wrap-extend--firstImg"><img class="img-responsive" src="'.$main_image_obj['sizes']['post-thumb'].'"></div>';
 		$main_url = $main_image_obj['url'];
     $thumb_url = $main_image_obj['sizes']['thumbnail'];
 	endif;

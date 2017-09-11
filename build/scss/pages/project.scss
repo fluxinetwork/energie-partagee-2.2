@@ -153,7 +153,6 @@
 	}
 }
 .following--clone {
-	display: none;
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -163,6 +162,7 @@
 	box-shadow: $bshadow;
 	background: #fff;
 	transform: translateY(100%);
+	@extend .transition;
 
 	.wrap {
 		@extend .wrap-extend;
@@ -221,12 +221,8 @@
 		}
 	}
 
-	&.slide-up {
-		animation: slideUp $ease-out-quart 0.6s 1 forwards;	
-	}
-
-	&.slide-down {
-		animation: slideDownFromOrigin $ease-out-quart 0.6s 1 forwards;	
+	&.is-visible {
+		transform: translateY(0);
 	}
 }
 
@@ -357,7 +353,7 @@
 				top: 6px;
 				left: 6px;
 				position: absolute;
-				animation: pulse 1s infinite forwards;	
+				animation: pulse .8s infinite forwards;	
 			}
 		}
 	}
@@ -369,6 +365,13 @@
 		}
 	}
 }
+
+@keyframes pulse {
+	0% {transform: scale(1);}
+	50% {transform: scale(1.1);}
+	100% {transform: scale(1);}
+}
+
 
 
 /* REPARTITION */

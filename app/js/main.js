@@ -341,7 +341,8 @@ var FOO = {
 			$(".fitvids").fitVids();
 			if($('body.single-projets').length){			
 				initSingleMap();				
-				initSendMailPorspect();			
+				//initSendMailPorspect();		
+                following_clone();	
 			}
         }
     },	
@@ -650,7 +651,7 @@ $('.js-widget').on('mouseenter', function () {
 	}
 });
 
-$('.fc').waypoint(function() {
+$('.fc, .js-toggle-follow-clone').waypoint(function() {
 	$('.js-widget').toggleClass('is-off');
 }, {offset: '50%'});
 
@@ -915,7 +916,7 @@ function addMakers(map, data){
 			var markerContent = '<article class="card-map c-'+categoryNRJ+' anim-out-left">'; 
 				markerContent += '<header class="card card-project">';
 					markerContent += '<a href="'+data[i].permalink+'">';
-	            		markerContent += '<div class="card__img" style="background-image:url('+data[i].image+')"><i class="card__icon"></i><div class="spinner"></div><span class="tag is-inactive">'+data[i].stadeName+'</span></div>';
+	            		//markerContent += '<div class="card__img" style="background-image:url('+data[i].image+')"><i class="card__icon"></i><div class="spinner"></div><span class="tag is-inactive">'+data[i].stadeName+'</span></div>';
 	            		markerContent += '<div class="card__infos"><h1 class="card__title">'+data[i].title+'</h1><p class="p-ss">'+data[i].region+'</p></div>';
 	            	markerContent += '</a>';
 	            markerContent += '</header>';
@@ -2173,6 +2174,17 @@ function addCardContent (type, content, domId, factor){
 		}
 	 	
 	}, {offset: '-1px'});
+function following_clone() {
+	$( ".js-follow-bt" ).clone().appendTo( ".js-follow-clone" );
+	
+	$('.js-toggle-follow-clone').waypoint(function() {
+		$('.js-follow-clone').parent().toggleClass('is-visible');
+	}, { offset: '-5%' });
+
+	$('.js-footer').waypoint(function() {
+		$('.js-follow-clone').parent().toggleClass('is-visible');
+	}, { offset: '100%' });
+}
 function init_tabs() {
 	$('.js-tab').on('click', function(e) {
 		e.preventDefault();

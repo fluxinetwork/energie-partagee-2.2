@@ -1,4 +1,5 @@
 <div>
+
 <a href="https://je-souscris.energie-partagee.org/" target="_blank" class="c-widget js-widget">
 	<div class="c-widget__message js-widget-message">
 		<div class="c-widget__message__txt">Le site de souscription ?<span>C'est par ici</span></div>
@@ -14,7 +15,7 @@
 			</div>
 		</div>
 	</div>
-	<span class="widget-close js-widget-close">X</span>
+	<span class="c-widget__close js-widget-close">X</span>
 </a>
 
 </div>

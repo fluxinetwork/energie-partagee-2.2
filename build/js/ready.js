@@ -74,7 +74,8 @@ var FOO = {
 			$(".fitvids").fitVids();
 			if($('body.single-projets').length){			
 				initSingleMap();				
-				initSendMailPorspect();			
+				//initSendMailPorspect();		
+                following_clone();	
 			}
         }
     },	

@@ -1,19 +1,19 @@
-<div class="following box">
+<div class="following box js-toggle-follow-clone">
   <div class="box__social">
     <?php get_socials('news'); ?>
   </div>
 
   <?php if($value_stade == 'onsuit'): ?>
-      <div class="box__btn">
+      <div class="box__btn js-follow-bt">
         <button type="button" class="button green cta has-icon js-open-follow"><i class="icon-heart_20"></i> En savoir plus</button>
       </div>
   <?php elseif($value_stade=='collecte' && 1==2): ?>
-      <div class="box__btn">
+      <div class="box__btn js-follow-bt">
         <button type="button" class="button green cta has-icon js-open-follow"><i class="icon-heart_20"></i> Soutenir ce projet</button>
       </div>
   <?php elseif(($value_stade=='collecte'||$value_stade=='succes') && !empty($url_call_to_action)): ?>
-      <div class="box__btn">
-        <a href="<?php echo $url_call_to_action;?>" class="button green cta has-icon"><i class="icon-heart_20"></i> En savoir plus</a>
+      <div class="box__btn js-follow-bt">
+        <a href="<?php echo $url_call_to_action;?>" target="_blank" class="button green cta has-icon"><i class="icon-heart_20"></i> En savoir plus</a>
       </div>    
   <?php endif; ?>
 </div>
@@ -63,7 +63,7 @@
 </aside>
 
 <div class="following--clone">
-  <span class="wrap">
+  <span class="wrap js-follow-clone">
     <i class="icon-nrj icon-<?php echo $taxoslug;?>_64"></i>
     <div class="card__infos">
       <h1 class="card__title"><?php the_title(); ?></h1>

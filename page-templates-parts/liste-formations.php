@@ -1,7 +1,7 @@
 <section class="page-formations l-tabs js-tab-wrap">
 	<div class="l-tabs__controls">
-		<button class="l-tabs__controls__tab button cta js-tab">Formation</button>
-		<button class="l-tabs__controls__tab button cta js-tab">Webinaire</button>
+		<button class="l-tabs__controls__tab button cta js-tab">Formations</button>
+		<button class="l-tabs__controls__tab button cta js-tab">Webinaires</button>
 	</div>
 	
 	<div class="l-tabs__content page-formations__content">
@@ -135,6 +135,15 @@ else :
 	echo '</li>';
 
 endif;
+
+echo '<li class="l-tabs__content__list__item">';
+echo '<a href="http://energie-partagee.org/nos-outils/nos-formations/les-videos-des-webenr-passes/" target="_blank">';
+echo '<article class="c-formation">';
+echo '<div class="button-round grey"><i class="icon-plus_64"></i></div>';
+echo '<div class="c-formation__infos"><h1 class="c-formation__infos__title">Visionner les vidéos des Web\'EnR passés</h1></div>';
+echo '</article>';
+echo '</a>';
+echo '</li>';
 
 echo '</ul>';
 

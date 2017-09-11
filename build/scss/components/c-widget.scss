@@ -123,17 +123,17 @@
 	padding: 10px;
 }
 
-.widget-close{
+.c-widget__close{
 	position: absolute;
-	width: 18px;
-	height: 18px;
-	text-align: center;
-	background-color: white;
+	width: 20px;
+	height: 20px;
+	background-color: $c-dark;
+	color: #fff;
 	border-radius: 50%;
-	display: inline-block;
-	font-size: 12px;
-	bottom: -8px;
-	right: -8px;
-	z-index: 10;
-
+	@include flex(center);
+	font-size: 10px;
+	bottom: -9px;
+	right: -9px;
+	z-index: 1;
+	font-family: verdana;
 }

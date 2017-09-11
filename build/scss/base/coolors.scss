@@ -82,6 +82,20 @@
 	}
 }
 
+@mixin follow_colors($color) {
+	.following--clone {
+		background-color: $color;
+
+		.icon-nrj {
+			color: $color;
+		}
+
+		.box__social button i {
+			color: darken($color, 10%) !important;
+		}
+	}
+}
+
 // CARD PROJECT
 
 @mixin card_project_colors($color, $icon) {
@@ -114,29 +128,35 @@
 	@include project_colors ($c-solaire);
 	@include map_colors($c-solaire, "\e91e");
 	@include card_project_colors($c-solaire, "\e91f");
+	@include follow_colors($c-solaire);
 } 
 .c-eolie {
 	@include project_colors ($c-eolien);
 	@include map_colors($c-eolien, "\e90d");
 	@include card_project_colors($c-eolien, "\e90e");
+	@include follow_colors($c-eolien);
 } 
 .c-micro {
 	@include project_colors ($c-hydro);
 	@include map_colors($c-hydro, "\e917");
 	@include card_project_colors($c-hydro, "\e918");
+	@include follow_colors($c-hydro);
 } 
 .c-bioma {
 	@include project_colors ($c-bio);
 	@include map_colors($c-bio, "\e901");
 	@include card_project_colors($c-bio, "\e902");
+	@include follow_colors($c-bio);
 } 
 .c-geoth {
 	@include project_colors ($c-geo);
 	@include map_colors($c-geo, "\e913");
 	@include card_project_colors($c-geo, "\e914");
+	@include follow_colors($c-geo);
 } 
 .c-econo {
 	@include project_colors ($c-eco);
 	@include map_colors($c-eco, "\e90b");
 	@include card_project_colors($c-eco, "\e90c");
+	@include follow_colors($c-eco);
 } 
