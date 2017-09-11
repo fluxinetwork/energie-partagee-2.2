@@ -658,11 +658,17 @@ $('.fc').waypoint(function() {
 $('.js-widget-close').on('click', function (e) {
 	e.preventDefault();
 	$('.c-widget, .js-widget-close').css('display','none');
-	localStorage.clickcount = 1;	
+	localStorage.timeclosed = Date.now();
+	localStorage.clickcount = 1;
 });
 
-if( localStorage.clickcount == 1 ){
-	$('.c-widget, .js-widget-close').css('display','none');
+if( localStorage.clickcount ){
+	var closeWidgetDelai = Math.round(localStorage.timeclosed) + 600;
+	var compareTimeout = Math.round(Date.now());
+
+	if(compareTimeout >= closeWidgetDelai){
+		$('.c-widget, .js-widget-close').css('display','none');
+	}
 }
 var timerOff;
 
