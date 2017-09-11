@@ -658,15 +658,19 @@ $('.fc').waypoint(function() {
 $('.js-widget-close').on('click', function (e) {
 	e.preventDefault();
 	$('.c-widget, .js-widget-close').css('display','none');
-	localStorage.timeclosed = Date.now();
+	localStorage.delaistorage = Date.now();
 	localStorage.clickcount = 1;
 });
 
 if( localStorage.clickcount ){
-	var closeWidgetDelai = Math.round(localStorage.timeclosed) + 600;
-	var compareTimeout = Math.round(Date.now());
-
-	if(compareTimeout >= closeWidgetDelai){
+	var closeWidgetDelai = 0;
+	var compareTimeout = 600001;
+	if(localStorage.delaistorage){
+		closeWidgetDelai = Math.round(localStorage.delaistorage);
+		compareTimeout = Math.round(Date.now()) - closeWidgetDelai;
+	}	
+	
+	if(compareTimeout < 600000){
 		$('.c-widget, .js-widget-close').css('display','none');
 	}
 }
