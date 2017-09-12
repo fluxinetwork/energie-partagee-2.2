@@ -41,7 +41,7 @@
         
         <nav class="footer__nav">
            <a class="link" href="<?php echo get_site_url(); ?>/contact/">Contact</a>
-           <a class="link" href="<?php echo get_permalink(968); ?>/contact/">Presse</a>
+           <a class="link" href="<?php echo get_permalink(968); ?>">Presse</a>
            <a class="link" href="<?php echo get_site_url(); ?>/mentions-legales/">Mentions légales </a>
         </nav>
         
