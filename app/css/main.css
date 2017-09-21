@@ -7532,20 +7532,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   color: #fff;
   margin-bottom: 20px;
 }
-.c-zoho--line .c-zoho__form__inputs {
-  display: flex;
-  flex-direction: row;
-}
-.c-zoho--line .c-zoho__form__inputs .c-zoho__form__inputs_item {
-  margin: 0;
-  flex: 1 0 0;
-}
-.c-zoho--line .c-zoho__form__inputs .c-zoho__form__inputs_item:first-child {
-  margin-right: 2rem;
-}
-.c-zoho--line .c-zoho__form__inputs .c-zoho__form__inputs_item:last-child {
-  margin-left: 2rem;
-}
 
 .c-zoho__form {
   width: 100%;
@@ -7577,6 +7563,21 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 @media screen and (min-width: 830px) {
+  .c-zoho--line .c-zoho__form__inputs {
+    display: flex;
+    flex-direction: row;
+  }
+  .c-zoho--line .c-zoho__form__inputs .c-zoho__form__inputs_item {
+    margin: 0;
+    flex: 1 0 0;
+  }
+  .c-zoho--line .c-zoho__form__inputs .c-zoho__form__inputs_item:first-child {
+    margin-right: 2rem;
+  }
+  .c-zoho--line .c-zoho__form__inputs .c-zoho__form__inputs_item:last-child {
+    margin-left: 2rem;
+  }
+
   .c-zoho__form {
     align-items: center;
     flex-direction: row;
