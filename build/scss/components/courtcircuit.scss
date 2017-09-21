@@ -19,19 +19,30 @@
 }
 
 .courtcircuit {
+	display: block !important;
 	@extend %box-special;
 	@extend %box-asymetrique;
 	@include background(radial-gradient(lighten( $c-focus, 5% ),$c-focus), center no-repeat $c-focus scroll);
 	border-radius: 0;
 
-	.box-asy__right {
+	.box-asy__left {
+		width: 100%;
+		padding: 0;
 		max-width: 100%;
+		text-align: center;
+	}
+
+	.box-asy__right {
+		width: 100%;
+		max-width: 100%;
+		margin: 0;
+		margin-top: 20px;
 	}
 }
 
 .courtcircuit__text{
 	color:#fff;
-	max-width: 270px;
+	width: 100%;
 	line-height: 1.4;
 }
 
@@ -48,43 +59,17 @@
 }
 
 
-@media screen and (min-width: $bp--small) {	
-	.courtcircuit {
-		.box__half.input__fixe{
-			flex: 1;
-			margin-right: 0;
-		}
-		.box__half {
-			margin-bottom: 0;
-			align-self: center;
-
-			&:first-child {
-				flex: 1;
-			}
-		}
-	}
-}
-
 @media screen and (min-width: 530px) and (max-width: $bp--medium) {
 	.courtcircuit__text {
 		text-align: center;
 	}
 }
 
-@media screen and (max-width: $bp--medium) {
-	.courtcircuit .box-asy__right {
-		max-width: 400px;
-		margin-top: $gutter/2;
-	}
-	.courtcircuit__text {
-		max-width: 100%;
-	}
-}
 
 @media screen and (min-width: $bp--medium) {
 	.courtcircuit {
 		border-radius: $radius;
-		flex-direction: row;
+		//flex-direction: row;
 		@include padding(null $gutter*2);
 
 		.box-asy__left {

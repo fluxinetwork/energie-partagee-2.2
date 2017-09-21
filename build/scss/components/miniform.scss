@@ -10,13 +10,13 @@
 
 .miniform__input {
 	background: none transparent;
-	border-bottom:1px solid rgba(#fff, 0.3);
+	border-bottom:2px solid rgba(#fff, 0.3);
 	color: $c-textwhite;
 	font-family: $main-font;
-	font-size: 3.4rem;
+	@extend .h4;
 	height: 100%;
 	width: 100%;
-	max-width: 285px;
+	//max-width: 285px;
 	padding: 0.4rem 0;
 	-webkit-appearance: none;
   	-webkit-border-radius: 0;

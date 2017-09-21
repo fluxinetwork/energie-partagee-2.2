@@ -1885,14 +1885,14 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .c-formation__infos__title, .h5, .h6,
+.h1, .h2, .h3, .h4, .miniform__input, .c-formation__infos__title, .h5, .h6,
 p, .p {
   font-family: "avantgarde", Arial;
   margin: 0;
   padding: 0;
 }
 h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child,
-.h1:first-child, .h2:first-child, .h3:first-child, .h4:first-child, .c-formation__infos__title:first-child, .h5:first-child, .h6:first-child,
+.h1:first-child, .h2:first-child, .h3:first-child, .h4:first-child, .miniform__input:first-child, .c-formation__infos__title:first-child, .h5:first-child, .h6:first-child,
 p:first-child, .p:first-child {
   margin-top: 0;
 }
@@ -1966,6 +1966,7 @@ h3 + p, .h3 + p {
 
 h4,
 .h4,
+.miniform__input,
 .c-formation__infos__title,
 .card__title {
   font-size: 1.6rem;
@@ -1974,6 +1975,7 @@ h4,
 @media screen and (min-width: 600px) {
   h4,
   .h4,
+  .miniform__input,
   .c-formation__infos__title,
   .card__title {
     font-size: 1.8rem;
@@ -1981,7 +1983,7 @@ h4,
   }
 }
 
-.h4, .c-formation__infos__title {
+.h4, .miniform__input, .c-formation__infos__title {
   color: #122c33;
   font-weight: normal;
   margin-top: 3rem;
@@ -2118,7 +2120,7 @@ blockquote .blockquote {
     margin-top: 8rem;
   }
 
-  h4, .h4, .c-formation__infos__title {
+  h4, .h4, .miniform__input, .c-formation__infos__title {
     margin-top: 5rem;
   }
 
@@ -3884,17 +3886,27 @@ blockquote .blockquote {
 }
 
 .courtcircuit {
+  display: block !important;
   background: -webkit-radial-gradient(#ed7b34, #eb6c1d), center no-repeat #eb6c1d scroll;
   background: radial-gradient(#ed7b34, #eb6c1d), center no-repeat #eb6c1d scroll;
   border-radius: 0;
 }
-.courtcircuit .box-asy__right {
+.courtcircuit .box-asy__left {
+  width: 100%;
+  padding: 0;
   max-width: 100%;
+  text-align: center;
+}
+.courtcircuit .box-asy__right {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  margin-top: 20px;
 }
 
 .courtcircuit__text {
   color: #fff;
-  max-width: 270px;
+  width: 100%;
   line-height: 1.4;
 }
 
@@ -3913,38 +3925,14 @@ blockquote .blockquote {
   display: none;
 }
 
-@media screen and (min-width: 600px) {
-  .courtcircuit .box__half.input__fixe {
-    flex: 1;
-    margin-right: 0;
-  }
-  .courtcircuit .box__half {
-    margin-bottom: 0;
-    align-self: center;
-  }
-  .courtcircuit .box__half:first-child {
-    flex: 1;
-  }
-}
 @media screen and (min-width: 530px) and (max-width: 830px) {
   .courtcircuit__text {
     text-align: center;
   }
 }
-@media screen and (max-width: 830px) {
-  .courtcircuit .box-asy__right {
-    max-width: 400px;
-    margin-top: 2rem;
-  }
-
-  .courtcircuit__text {
-    max-width: 100%;
-  }
-}
 @media screen and (min-width: 830px) {
   .courtcircuit {
     border-radius: 3px;
-    flex-direction: row;
     padding-right: 8rem;
     padding-left: 8rem;
   }
@@ -4489,7 +4477,7 @@ blockquote .blockquote {
   text-transform: none;
   display: none;
 }
-.f-btn + .h4, .f-btn--txt + .h4, .f-btn--big + .h4, .f-btn + .c-formation__infos__title, .f-btn--txt + .c-formation__infos__title, .f-btn--big + .c-formation__infos__title {
+.f-btn + .h4, .f-btn--txt + .h4, .f-btn--big + .h4, .f-btn + .miniform__input, .f-btn--txt + .miniform__input, .f-btn--big + .miniform__input, .f-btn + .c-formation__infos__title, .f-btn--txt + .c-formation__infos__title, .f-btn--big + .c-formation__infos__title {
   margin-top: 8rem;
 }
 
@@ -5165,8 +5153,9 @@ form#soumettre_projet .section-title,
 form#contact_ep .section-title {
   font-weight: 700;
 }
-form#soumettre_projet .h4, form#soumettre_projet .c-formation__infos__title,
+form#soumettre_projet .h4, form#soumettre_projet .miniform__input, form#soumettre_projet .c-formation__infos__title,
 form#contact_ep .h4,
+form#contact_ep .miniform__input,
 form#contact_ep .c-formation__infos__title {
   margin-top: 3rem;
 }
@@ -5236,13 +5225,11 @@ input {
 
 .miniform__input {
   background: none transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
   color: #fff;
   font-family: "avantgarde", Arial;
-  font-size: 3.4rem;
   height: 100%;
   width: 100%;
-  max-width: 285px;
   padding: 0.4rem 0;
   -webkit-appearance: none;
   -webkit-border-radius: 0;
@@ -5507,16 +5494,16 @@ input {
 .header-bloc--page .header-bloc__content, .header-bloc--404 .header-bloc__content, .header-bloc--home .header-bloc__content {
   position: relative;
 }
-.header-bloc--page .h4, .header-bloc--404 .h4, .header-bloc--home .h4, .header-bloc--page .c-formation__infos__title, .header-bloc--404 .c-formation__infos__title, .header-bloc--home .c-formation__infos__title {
+.header-bloc--page .h4, .header-bloc--404 .h4, .header-bloc--home .h4, .header-bloc--page .miniform__input, .header-bloc--404 .miniform__input, .header-bloc--home .miniform__input, .header-bloc--page .c-formation__infos__title, .header-bloc--404 .c-formation__infos__title, .header-bloc--home .c-formation__infos__title {
   margin-bottom: 0;
   margin-top: 3rem;
   color: #fff;
 }
-.header-bloc--page .h4 span, .header-bloc--404 .h4 span, .header-bloc--home .h4 span, .header-bloc--page .c-formation__infos__title span, .header-bloc--404 .c-formation__infos__title span, .header-bloc--home .c-formation__infos__title span {
+.header-bloc--page .h4 span, .header-bloc--404 .h4 span, .header-bloc--home .h4 span, .header-bloc--page .miniform__input span, .header-bloc--404 .miniform__input span, .header-bloc--home .miniform__input span, .header-bloc--page .c-formation__infos__title span, .header-bloc--404 .c-formation__infos__title span, .header-bloc--home .c-formation__infos__title span {
   display: inline-block;
   margin: 0 0.66667rem 0 0;
 }
-.header-bloc--page .h4 span:last-child, .header-bloc--404 .h4 span:last-child, .header-bloc--home .h4 span:last-child, .header-bloc--page .c-formation__infos__title span:last-child, .header-bloc--404 .c-formation__infos__title span:last-child, .header-bloc--home .c-formation__infos__title span:last-child {
+.header-bloc--page .h4 span:last-child, .header-bloc--404 .h4 span:last-child, .header-bloc--home .h4 span:last-child, .header-bloc--page .miniform__input span:last-child, .header-bloc--404 .miniform__input span:last-child, .header-bloc--home .miniform__input span:last-child, .header-bloc--page .c-formation__infos__title span:last-child, .header-bloc--404 .c-formation__infos__title span:last-child, .header-bloc--home .c-formation__infos__title span:last-child {
   margin-left: 2rem;
 }
 .header-bloc--page .tags, .header-bloc--404 .tags, .header-bloc--home .tags {
@@ -7533,6 +7520,81 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
   .cat-nav {
     min-width: 100px;
+  }
+}
+.c-zoho {
+  width: 100%;
+  margin-top: 12px;
+}
+.c-zoho #errorMsgDiv {
+  background-color: #F13636;
+  padding: 10px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.c-zoho--line .c-zoho__form__inputs {
+  display: flex;
+  flex-direction: row;
+}
+.c-zoho--line .c-zoho__form__inputs .c-zoho__form__inputs_item {
+  margin: 0;
+  flex: 1 0 0;
+}
+.c-zoho--line .c-zoho__form__inputs .c-zoho__form__inputs_item:first-child {
+  margin-right: 2rem;
+}
+.c-zoho--line .c-zoho__form__inputs .c-zoho__form__inputs_item:last-child {
+  margin-left: 2rem;
+}
+
+.c-zoho__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.c-zoho__form__inputs {
+  flex: 1 0 auto;
+}
+.c-zoho__form__inputs input {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.c-zoho__form__inputs_item {
+  margin-bottom: 30px;
+}
+.c-zoho__form__inputs_item[style*="border-color: rgb(242, 100, 77)"] {
+  border: 0 !important;
+}
+.c-zoho__form__inputs_item[style*="border-color: rgb(242, 100, 77)"] input {
+  border-color: #F13636 !important;
+}
+
+.c-zoho__form__submit {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 830px) {
+  .c-zoho__form {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .c-zoho__form__inputs {
+    margin-right: 20px;
+  }
+  .c-zoho__form__inputs input {
+    text-align: left;
+  }
+
+  .c-zoho__form__inputs_item:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .c-zoho__form__submit {
+    margin-right: auto;
   }
 }
 /*------------------------------*\
