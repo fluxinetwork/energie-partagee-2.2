@@ -15,9 +15,9 @@
       <script type="text/javascript">
       var $ZC = jQuery.noConflict();
       var trackingText='ZCFORMVIEW';
-      $ZC(document).ready( function($) {
-          $ZC("#zc_trackCode").val(trackingText);
-              $ZC("#fieldBorder").val($ZC("[changeItem='SIGNUP_FORM_FIELD']").css("border-color"));
+      $(document).ready( function($) {
+          $("#zc_trackCode").val(trackingText);
+              $("#fieldBorder").val($("[changeItem='SIGNUP_FORM_FIELD']").css("border-color"));
               _setOptin(false,function(th){
               /*Before submit, if you want to trigger your event, "include your code here"*/
           });

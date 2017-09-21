@@ -254,12 +254,17 @@ function more_post_ajax(){
     if ($loop -> have_posts()) :  while ($loop -> have_posts()) : $loop -> the_post();
 
 		// Thumb
-		if ( has_post_thumbnail() ):
+    	$main_img_add = get_field( 'add_image' );
+    	if ( has_post_thumbnail() && $main_img_add == 0) :
 			$news_img_id = get_post_thumbnail_id();
 			$news_img_array = wp_get_attachment_image_src($news_img_id, 'card--mini', true);
 			$news_img_url = $news_img_array[0];
            $news_img = '<img class="img-reponsive" src="'.$news_img_url.'">';
-		endif;
+		elseif($main_img_add == 1):
+	    	$main_image_obj = get_field( 'main_image' );			
+			$news_img_url = $main_image_obj['sizes']['card--mini'];
+			$news_img = '<img class="img-reponsive" src="'.$news_img_url.'">';	    
+		endif;		
 
 		if($cat == 16 || $cat == 19):
 			$date_news = date_i18n('d M', strtotime(get_field('date_event')));

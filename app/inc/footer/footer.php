@@ -1,6 +1,6 @@
 <footer class="footer section js-footer">
     <div class="wrap-n">
-    	<div class="box">
+        <div class="box">
             <div class="box__half">
                 <h5 class="s-title">Nous suivre</h5>
                 <ul class="social social-footer">
@@ -17,11 +17,10 @@
                     <script type="text/javascript" src="https://campaigns.zoho.com/js/jquery.form.js"></script>
                     <script type="text/javascript" src="https://campaigns.zoho.com/js/optin_min.js"></script>
                     <script type="text/javascript">
-                    var $ZC = jQuery.noConflict();
                     var trackingText='ZCFORMVIEW';
-                    $ZC(document).ready( function($) {
-                        $ZC("#zc_trackCode").val(trackingText);
-                            $ZC("#fieldBorder").val($ZC("[changeItem='SIGNUP_FORM_FIELD']").css("border-color"));
+                    $(document).ready( function($) {
+                        $("#zc_trackCode").val(trackingText);
+                            $("#fieldBorder").val($("[changeItem='SIGNUP_FORM_FIELD']").css("border-color"));
                             _setOptin(false,function(th){
                             /*Before submit, if you want to trigger your event, "include your code here"*/
                         });
@@ -89,7 +88,7 @@
         <h5 class="s-title">Nos labels</h5>
         <ul class="labels box">
             <li class="labels__img">
-            	<a class="labels__label" href="<?php echo get_site_url(); ?>/devenir-actionnaire/les-actions-energie-partagee/"><img src="<?php echo get_template_directory_uri(); ?>/app/img/logos/logo-label-1.png"></a>
+                <a class="labels__label" href="<?php echo get_site_url(); ?>/devenir-actionnaire/les-actions-energie-partagee/"><img src="<?php echo get_template_directory_uri(); ?>/app/img/logos/logo-label-1.png"></a>
                 <a class="labels__label" href="<?php echo get_site_url(); ?>/devenir-actionnaire/les-actions-energie-partagee/"><img src="<?php echo get_template_directory_uri(); ?>/app/img/logos/logo-label-2.png"></a>
             </li>
             <li class="labels__txt"><p class="p-ss">Énergie Partagée Investissement est agréée “Entreprise Solidaire” et ses actions bénéficient du label Finansol qui garantit la solidarité et la transparence de l'investissement.</p></li>
