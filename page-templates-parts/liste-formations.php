@@ -20,6 +20,7 @@ $cat_id = 2;
 echo '<ul class="l-tabs__content__list js-tab-content">';
 
 $args_formations_debutant = array(
+	'ignore_sticky_posts' 	=> 1,
 	'post_status' => 'publish',
 	'post_type' => 'post',
 	'posts_per_page' => -1,
