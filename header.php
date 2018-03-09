@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="<?php echo get_locale() ?>">	
+<!doctype html>
+<html lang="<?php echo get_locale() ?>" prefix="og: http://ogp.me/ns#">		
 <head>
 	
 	<meta charset="<?php bloginfo('charset'); ?>">

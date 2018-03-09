@@ -50,7 +50,7 @@
 	    </h1>
 	    
 	    <?php if($cat_post_slug=='evenements' || $cat_post_slug=='formations'): ?>
-	    			<h4 class="h4"><span class="icon-calendar_20"></span><?php echo date_i18n('d F Y', strtotime(get_field('date_event')));?><span class="icon-pin_20"></span><?php echo get_field('ville_event');?></h4>    
+	    		<h4 class="h4"><span class="icon-calendar_20"></span><?php echo date_i18n('d F Y', strtotime(get_field('date_event', false, false)));?><span class="icon-pin_20"></span><?php echo get_field('ville_event');?></h4>    
 	    <?php endif; ?>
     </div>
   </header>
