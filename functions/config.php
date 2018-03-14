@@ -5,7 +5,7 @@
  */
 
 // DEV
-define('THEME_DIRECTORY_NAME', 'energie-partagee-2'); // Theme directory name
+define('THEME_DIRECTORY_NAME', 'energie-partagee-2.2'); // Theme directory name
 define('DEV', false); // Dev environment
 define('CSS_COMPONENTS', false); // Work with CSS coponents ( DEV must be true )
 

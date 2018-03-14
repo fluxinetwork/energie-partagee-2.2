@@ -13,7 +13,7 @@ $cat_id = 2;
 
 /*=============================================*\
 
-			 FORMATIONS DEBUTANT
+			 FORMATIONS
 
 \*=============================================*/
 
@@ -22,7 +22,7 @@ echo '<ul class="l-tabs__content__list js-tab-content">';
 $args_formations_debutant = array(
 	'ignore_sticky_posts' 	=> 1,
 	'post_status' => 'publish',
-	'post_type' => 'post',
+	'post_type' => 'formation',
 	'posts_per_page' => -1,
 	'meta_key' => $meta_label,
 	'orderby' => 'meta_value_num',
@@ -79,7 +79,7 @@ wp_reset_postdata();
 
 /*=============================================*\
 
-			 FORMATIONS EXPERT
+			FORMATIONS TYPE WEBINAIRE
 
 \*=============================================*/
 
@@ -88,7 +88,7 @@ echo '<ul class="l-tabs__content__list js-tab-content">';
 $args_formations_expert = array(
 	'ignore_sticky_posts' 	=> 1,
 	'post_status' => 'publish',
-	'post_type' => 'post',
+	'post_type' => 'formation',
 	'posts_per_page' => -1,
 	'meta_key' => $meta_label,
 	'orderby' => 'meta_value_num',
@@ -139,7 +139,7 @@ else :
 endif;
 
 echo '<li class="l-tabs__content__list__item">';
-echo '<a href="http://energie-partagee.org/nos-outils/nos-formations/les-videos-des-webenr-passes/" target="_blank">';
+echo '<a href="https://energie-partagee.org/nos-outils/nos-formations/les-videos-des-webenr-passes/" target="_blank">';
 echo '<article class="c-formation">';
 echo '<div class="button-round grey"><i class="icon-plus_64"></i></div>';
 echo '<div class="c-formation__infos"><h1 class="c-formation__infos__title">Visionner les vidéos des Web\'EnR passés</h1></div>';
