@@ -327,12 +327,12 @@ function more_project_ajax(){
 		
 		if ( has_post_thumbnail() && $main_img_add == 0) :
 			$project_img_id = get_post_thumbnail_id();
-			$project_img_array = wp_get_attachment_image_src($project_img_id, 'card--mini', true);
+			$project_img_array = wp_get_attachment_image_src($project_img_id, 'card--full', true);
 			$project_img_url = $project_img_array[0];		
 	    
 		elseif($main_img_add == 1):
 	    	$main_image_obj = get_field( 'main_image' );			
-			$project_img_url = $main_image_obj['sizes']['card--mini'];	    
+			$project_img_url = $main_image_obj['sizes']['card--full'];	    
 		endif;
 
 		// Taxo Slug

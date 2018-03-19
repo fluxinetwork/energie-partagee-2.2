@@ -1811,9 +1811,12 @@ function loadMoreProjects(){
         success: function(data){
             var sourceUrl;
             $.each(data, function(i){
+                      
+                var terms_nrj = data[i].classSlug;
+
                 var $firstItem = $('.trio-card .box .box__half:eq(0)');
                 var $secondItem = $('.trio-card .box .box__half:eq(1)');
-                var content ='<a class="card card-project anim-out" href="'+data[i].permalink+'"><div class="card__img"><img class="img-reponsive" src="'+data[i].image+'"><i class="card__icon icon-uniE60F"></i></div><div class="card__infos"><h1 class="card__title">'+data[i].title+'</h1><p class="p-ss">'+data[i].region+'</p></div></a>';
+                var content ='<a class="card card-project anim-out'+terms_nrj+'" href="'+data[i].permalink+'"><div class="card__img"><img class="img-reponsive" src="'+data[i].image+'"><i class="card__icon icon-uniE60F"></i></div><div class="card__infos"><h1 class="card__title">'+data[i].title+'</h1><p class="p-ss">'+data[i].region+'</p></div></a>';
                 sourceUrl = data[i].sourceUrl;
 
                 if(i > 0){
