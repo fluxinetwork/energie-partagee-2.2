@@ -30,7 +30,7 @@ Template Name: Tous les projets
       <div class="filters">
       	<h5 class="h5">Filtres énergies</h5>
         <?php
-          $cat_filter_terms = get_terms( 'type_energie', 'orderby=name&hide_empty=1' );
+          /*$cat_filter_terms = get_terms( 'type_energie', 'orderby=name&hide_empty=1&post_type=projets' );
             if ( ! empty( $cat_filter_terms ) && ! is_wp_error( $cat_filter_terms ) ): 
               echo '<ul class="map-filters first">';
                 foreach ( $cat_filter_terms as $term ) {
@@ -38,7 +38,48 @@ Template Name: Tous les projets
                 }  
               echo '</ul>';                     
             endif;
-        ?>        
+            <ul class="map-filters first">
+              <li class="c-autre">
+                <button data-filter="autres" type="button" class="button-round filter-nrj"><i class="icon-filter"></i></button>
+              </li>
+              <li class="c-bioma">
+                <button data-filter="biomasse" type="button" class="button-round filter-nrj"><i class="icon-filter"></i></button>
+              </li>
+              <li class="c-econo">
+                <button data-filter="economies-energie" type="button" class="button-round filter-nrj"><i class="icon-filter"></i></button>
+              </li>
+              <li class="c-eolie">
+                <button data-filter="eolien" type="button" class="button-round filter-nrj"><i class="icon-filter"></i></button>
+              </li>
+              <li class="c-geoth">
+                <button data-filter="geothermie" type="button" class="button-round filter-nrj"><i class="icon-filter"></i></button>
+              </li>
+              <li class="c-metha">
+                <button data-filter="methanisation" type="button" class="button-round filter-nrj"><i class="icon-filter"></i></button>
+              </li>
+              <li class="c-micro">
+                <button data-filter="micro-hydroelectricite" type="button" class="button-round filter-nrj"><i class="icon-filter"></i></button>
+              </li>
+              <li class="c-solai">
+                <button data-filter="solaire-photovoltaique" type="button" class="button-round filter-nrj"><i class="icon-filter"></i></button>
+              </li>
+            </ul>
+            */
+        ?>
+        <ul class="map-filters first">         
+          <li class="c-bioma">
+            <button data-filter="biomasse" type="button" class="button-round filter-nrj"><i class="icon-filter"></i></button>
+          </li>          
+          <li class="c-eolie">
+            <button data-filter="eolien" type="button" class="button-round filter-nrj"><i class="icon-filter"></i></button>
+          </li>
+          <li class="c-micro">
+            <button data-filter="micro-hydroelectricite" type="button" class="button-round filter-nrj"><i class="icon-filter"></i></button>
+          </li>
+          <li class="c-solai">
+            <button data-filter="solaire-photovoltaique" type="button" class="button-round filter-nrj"><i class="icon-filter"></i></button>
+          </li>
+        </ul>        
       </div>
       <div class="filters">
         <h5 class="h5">Filtres type de projet</h5>
@@ -58,8 +99,7 @@ Template Name: Tous les projets
   </div>
   <?php // FLUXI CONTENT         
     if( have_rows('elements_page') ):
-      echo '<article class="fluxi-content fitvids wrap-n">';   
-        //require_once locate_template('/app/inc/inc_projet/fluxi-content/builder.php');
+      echo '<article class="fluxi-content fitvids wrap-n">';
         the_content();         
       echo '</article>';
     endif;       

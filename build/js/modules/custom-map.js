@@ -78,7 +78,6 @@ var stylesMapProjects = [
 ];
 
 
-var markerShadow;
 var iconShadow = {
 	url: themeURL+'/app/img/marker-shadow.png',
 	size: new google.maps.Size(38, 38),
@@ -86,116 +85,116 @@ var iconShadow = {
 	anchor: new google.maps.Point(36, 34)
 };
 
-var iconsSelectProjectsMap = {
+var iconsProjectsMap = {
 	eolie: {  
 		path: google.maps.SymbolPath.CIRCLE, 
-		scale: 16,
+		scale: 8,
 		strokeColor: '#ffffff',
       	strokeOpacity: 1,
-      	strokeWeight: 7,
+      	strokeWeight: 2,
       	fillColor: '#5ab1bb',
       	fillOpacity: 1, 
     },
 	bioma: {  
 		path: google.maps.SymbolPath.CIRCLE, 
-		scale: 16,
+		scale: 8,
 		strokeColor: '#ffffff',
       	strokeOpacity: 1,
-      	strokeWeight: 7,
+      	strokeWeight: 2,
       	fillColor: '#83ab00',
       	fillOpacity: 1, 
     },
 	solai: { 
 		path: google.maps.SymbolPath.CIRCLE, 
-		scale: 16,
+		scale: 8,
 		strokeColor: '#ffffff',
       	strokeOpacity: 1,
-      	strokeWeight: 7,
+      	strokeWeight: 2,
       	fillColor: '#e9af00',
       	fillOpacity: 1, 
     },
 	micro: {  
 		path: google.maps.SymbolPath.CIRCLE, 
-		scale: 16,
+		scale: 8,
 		strokeColor: '#ffffff',
       	strokeOpacity: 1,
-      	strokeWeight: 7,
+      	strokeWeight: 2,
       	fillColor: '#5268b9',
       	fillOpacity: 1, 
     },
 	geoth: {  
 		path: google.maps.SymbolPath.CIRCLE, 
-		scale: 16,
+		scale: 8,
 		strokeColor: '#ffffff',
       	strokeOpacity: 1,
-      	strokeWeight: 7,
+      	strokeWeight: 2,
       	fillColor: '#e7511e',
       	fillOpacity: 1, 
     },
 	econo: {  
 		path: google.maps.SymbolPath.CIRCLE, 
-		scale: 16,
+		scale: 8,
 		strokeColor: '#ffffff',
       	strokeOpacity: 1,
-      	strokeWeight: 7,
-      	fillColor: '#b718b',
+      	strokeWeight: 2,
+      	fillColor: '#b7115b',
       	fillOpacity: 1, 
     }
 };
 
-var iconsProjectsMap = {
+var iconsSelectProjectsMap = {
 	eolie: {  
 		path: google.maps.SymbolPath.CIRCLE, 
-		scale: 16,
-		strokeColor: '#ffffff',
-      	strokeOpacity: 0,
-      	strokeWeight: 7,
-      	fillColor: '#5ab1bb',
-      	fillOpacity: 1, 
+		scale: 7,
+		strokeColor: '#5ab1bb',
+      	strokeOpacity: 1,
+      	strokeWeight: 3,
+      	fillColor: '#ffffff',
+      	fillOpacity: 1,
     },
 	bioma: {  
 		path: google.maps.SymbolPath.CIRCLE, 
-		scale: 16,
-		strokeColor: '#ffffff',
-      	strokeOpacity: 0,
-      	strokeWeight: 7,
-      	fillColor: '#83ab00',
+		scale: 7,
+		strokeColor: '#83ab00',
+      	strokeOpacity: 1,
+      	strokeWeight: 3,
+      	fillColor: '#ffffff',
       	fillOpacity: 1, 
     },
 	solai: { 
 		path: google.maps.SymbolPath.CIRCLE, 
-		scale: 16,
-		strokeColor: '#ffffff',
-      	strokeOpacity: 0,
-      	strokeWeight: 7,
-      	fillColor: '#e9af00',
+		scale: 7,
+		strokeColor: '#e9af00',
+      	strokeOpacity: 1,
+      	strokeWeight: 3,
+      	fillColor: '#ffffff',
       	fillOpacity: 1, 
     },
 	micro: {  
 		path: google.maps.SymbolPath.CIRCLE, 
-		scale: 16,
-		strokeColor: '#ffffff',
-      	strokeOpacity: 0,
-      	strokeWeight: 7,
-      	fillColor: '#5268b9',
+		scale: 7,
+		strokeColor: '#5268b9',
+      	strokeOpacity: 1,
+      	strokeWeight: 3,
+      	fillColor: '#ffffff',
       	fillOpacity: 1, 
     },
 	geoth: {  
 		path: google.maps.SymbolPath.CIRCLE, 
-		scale: 16,
-		strokeColor: '#ffffff',
-      	strokeOpacity: 0,
-      	strokeWeight: 7,
-      	fillColor: '#e7511e',
+		scale: 7,
+		strokeColor: '#e7511e',
+      	strokeOpacity: 1,
+      	strokeWeight: 3,
+      	fillColor: '#ffffff',
       	fillOpacity: 1, 
     },
 	econo: {  
 		path: google.maps.SymbolPath.CIRCLE, 
-		scale: 16,
-		strokeColor: '#ffffff',
-      	strokeOpacity: 0,
-      	strokeWeight: 7,
-      	fillColor: '#b7115b',
+		scale: 7,
+		strokeColor: '#b718b',
+      	strokeOpacity: 1,
+      	strokeWeight: 3,
+      	fillColor: '#ffffff',
       	fillOpacity: 1, 
     }
 };
@@ -246,9 +245,7 @@ function initSingleMap(){
 		map: map,
 		title: title,
 		icon: iconsSelectProjectsMap[categoryNRJ]
-	});	
-
-	markerShadow = new MarkerShadow(marker.getPosition(), iconShadow, map);
+	});
 
 	// do something only the first time the map is loaded
 	google.maps.event.addListenerOnce(map, 'idle', function(){
@@ -440,14 +437,6 @@ function addMakers(map, data){
 // Event on click  on a marker
 function onClickMarker(index,map,marker,categoryNRJ){
 	
-	// Add a shadow
-	if (markerShadow && markerShadow.setPosition) {
-        markerShadow.setPosition(marker.getPosition());
-        markerShadow.show();
-    } else {
-    	markerShadow = new MarkerShadow(marker.getPosition(), iconShadow, map);
-    	markerShadow.show();
-    }
     // Modify previous marker
     if(isOpenMarker){
     	previousMarker.setIcon(iconsProjectsMap[previousNrj]);
@@ -575,8 +564,7 @@ function resetStadeFilter(){
 function resetMarkers() {	
 	if(isOpenMarker){
 		// reset icon
-    	previousMarker.setIcon(iconsProjectsMap[previousNrj]);
-    	markerShadow.hide();
+    	previousMarker.setIcon(iconsProjectsMap[previousNrj]);    	
     	isOpenMarker = false;
     	// reset card
     	$('.cards-map .card-map:eq('+prevCardMapId+')').toggleClass('anim-out-left');
@@ -629,120 +617,5 @@ function reloadCurrentPage(){
 	    lastWindowW = windowW; 
 	}
 }
-
-
-/*
- * Marker shadow prototype
- * 
- */
-MarkerShadow.prototype = new google.maps.OverlayView();
-MarkerShadow.prototype.setPosition = function(latlng) {
-    this.posn_ = latlng;
-    this.draw();
-  }
-  /** @constructor */
-
-function MarkerShadow(position, options, map) {
-
-    // Initialize all properties.
-    this.posn_ = position;
-    this.map_ = map;
-    if (typeof(options) == "string") {
-      this.image = options;
-    } else {
-      this.options_ = options;
-      if (!!options.size) this.size_ = options.size;
-      if (!!options.url) this.image_ = options.url;
-    }
-
-    // Define a property to hold the image's div. We'll
-    // actually create this div upon receipt of the onAdd()
-    // method so we'll leave it null for now.
-    this.div_ = null;
-
-    // Explicitly call setMap on this overlay.
-    this.setMap(map);
-  }
-  /**
-   * onAdd is called when the map's panes are ready and the overlay has been
-   * added to the map.
-   */
-MarkerShadow.prototype.onAdd = function() {
-  // if no url, return, nothing to do.
-  if (!this.image_) return;
-  var div = document.createElement('div');
-  div.style.borderStyle = 'none';
-  div.style.borderWidth = '0px';
-  div.style.position = 'absolute';
-
-  // Create the img element and attach it to the div.
-  var img = document.createElement('img');
-  img.src = this.image_;
-  img.style.width = this.options_.size.x + 'px';
-  img.style.height = this.options_.size.y + 'px';
-  img.style.position = 'absolute';
-
-  div.appendChild(img);
-
-  this.div_ = div;
-
-  // Add the element to the "overlayLayer" pane.
-  var panes = this.getPanes();
-  panes.overlayShadow.appendChild(div);
-};
-
-MarkerShadow.prototype.draw = function() {
-  // if no url, return, nothing to do.
-  if (!this.image_) return;
-  // We use the coordinates of the overlay to peg it to the correct position 
-  // To do this, we need to retrieve the projection from the overlay.
-  var overlayProjection = this.getProjection();
-
-  var posn = overlayProjection.fromLatLngToDivPixel(this.posn_);
-
-  // Resize the image's div to fit the indicated dimensions.
-  if (!this.div_) return;
-  var div = this.div_;
-  if (!!this.options_.anchor) {
-    div.style.left = Math.floor(posn.x - this.options_.anchor.x) + 'px';
-    div.style.top = Math.floor(posn.y - this.options_.anchor.y) + 'px';
-  }
-  if (!!this.options_.size) {
-    div.style.width = this.size_.x + 'px';
-    div.style.height = this.size_.y + 'px';
-  }
-};
-
-// The onRemove() method will be called automatically from the API if
-// we ever set the overlay's map property to 'null'.
-MarkerShadow.prototype.onRemove = function() {
-  if (!this.div_) return;
-  this.div_.parentNode.removeChild(this.div_);
-  this.div_ = null;
-};
-
-// Set the visibility to 'hidden' or 'visible'.
-MarkerShadow.prototype.hide = function() {
-  if (this.div_) {
-    // The visibility property must be a string enclosed in quotes.
-    this.div_.style.visibility = 'hidden';
-  }
-};
-
-MarkerShadow.prototype.show = function() {
-  if (this.div_) {
-    this.div_.style.visibility = 'visible';
-  }
-};
-/*
-MarkerShadow.prototype.toggle = function() {
-  if (this.div_) {
-    if (this.div_.style.visibility === 'hidden') {
-      this.show();
-    } else {
-      this.hide();
-    }
-  }
-};*/
 
 
